@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21221602}
   - 50: {fileID: 5054730}
   - 114: {fileID: 11447682}
-  m_Layer: 0
+  - 58: {fileID: 5827390}
+  m_Layer: 8
   m_Name: DefaultBullet (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +46,8 @@ GameObject:
   - 212: {fileID: 21261472}
   - 50: {fileID: 5029478}
   - 114: {fileID: 11464526}
-  m_Layer: 0
+  - 58: {fileID: 5808812}
+  m_Layer: 8
   m_Name: DefaultBullet (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +65,8 @@ GameObject:
   - 212: {fileID: 21282946}
   - 50: {fileID: 5078052}
   - 114: {fileID: 11495946}
-  m_Layer: 0
+  - 58: {fileID: 5814646}
+  m_Layer: 8
   m_Name: DefaultBullet (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +84,8 @@ GameObject:
   - 212: {fileID: 21243202}
   - 50: {fileID: 5052734}
   - 114: {fileID: 11414592}
-  m_Layer: 0
+  - 58: {fileID: 5892348}
+  m_Layer: 8
   m_Name: DefaultBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +103,8 @@ GameObject:
   - 212: {fileID: 21257326}
   - 50: {fileID: 5008216}
   - 114: {fileID: 11422290}
-  m_Layer: 0
+  - 58: {fileID: 5822992}
+  m_Layer: 8
   m_Name: DefaultBullet (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +195,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199652}
-  m_Mass: 1
+  m_Mass: 9.99999975e-05
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -206,7 +211,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186406}
-  m_Mass: 1
+  m_Mass: 9.99999975e-05
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -222,7 +227,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197136}
-  m_Mass: 1
+  m_Mass: 9.99999975e-05
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -238,7 +243,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140482}
-  m_Mass: 1
+  m_Mass: 9.99999975e-05
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -254,7 +259,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189064}
-  m_Mass: 1
+  m_Mass: 9.99999975e-05
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
@@ -263,6 +268,71 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5808812
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186406}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 6caa92617480f4fef9dc35e6641a5579, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 3.7252903e-09}
+  serializedVersion: 2
+  m_Radius: .0799999982
+--- !u!58 &5814646
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189064}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 6caa92617480f4fef9dc35e6641a5579, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 3.7252903e-09}
+  serializedVersion: 2
+  m_Radius: .0799999982
+--- !u!58 &5822992
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199652}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 6caa92617480f4fef9dc35e6641a5579, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -9.31322575e-10}
+  serializedVersion: 2
+  m_Radius: .0799999982
+--- !u!58 &5827390
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140482}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 6caa92617480f4fef9dc35e6641a5579, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -9.31322575e-10}
+  serializedVersion: 2
+  m_Radius: .0799999982
+--- !u!58 &5892348
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 197136}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 6caa92617480f4fef9dc35e6641a5579, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .0799999982
 --- !u!114 &11403950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,11 +355,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   Speed: 8
-  HitParticle: {fileID: 0}
+  HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
   Bounce: 0
+  isDeadly: 0
   MaxLifetime: 1
+  Children: []
 --- !u!114 &11422290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,11 +374,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   Speed: 8
-  HitParticle: {fileID: 0}
+  HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
   Bounce: 0
+  isDeadly: 0
   MaxLifetime: 1
+  Children: []
 --- !u!114 &11447682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,11 +393,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   Speed: 8
-  HitParticle: {fileID: 0}
+  HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
   Bounce: 0
+  isDeadly: 0
   MaxLifetime: 1
+  Children: []
 --- !u!114 &11464526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,11 +412,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   Speed: 8
-  HitParticle: {fileID: 0}
+  HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
   Bounce: 0
+  isDeadly: 0
   MaxLifetime: 1
+  Children: []
 --- !u!114 &11495946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,11 +431,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   Speed: 8
-  HitParticle: {fileID: 0}
+  HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
   Bounce: 0
+  isDeadly: 0
   MaxLifetime: 1
+  Children: []
 --- !u!212 &21221602
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -495,6 +580,38 @@ Prefab:
       propertyPath: FadeParticle
       value: 
       objectReference: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: .0799999982
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 6caa92617480f4fef9dc35e6641a5579, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Bounce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 9.99999975e-05
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isDeadly
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HitParticle
+      value: 
+      objectReference: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 160930}

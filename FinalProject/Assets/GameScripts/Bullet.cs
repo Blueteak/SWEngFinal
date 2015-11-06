@@ -3,15 +3,18 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
+	public float damage;
+
 	public float Speed;
 	public GameObject HitParticle;
 	public GameObject FadeParticle;
 
 	private Vector2 addV; //Relative velocity to fireing gun
+	
+	public int BounceNum;
+	int bounces = 0;
 
-	public bool Bounce;
-
-	bool isDeadly; //Deadly in scene (for shots that local player fires)
+	public bool isDeadly; //Deadly in scene (for shots that local player fires)
 
 	public float MaxLifetime = 3;
 
@@ -34,16 +37,37 @@ public class Bullet : MonoBehaviour {
 
 	public void setDeadly(bool b)
 	{
-		isDeadly = b;
+		if(!isDeadly)
+			isDeadly = b;
 	}
 
-	void OnTriggerEnter2D (Collider2D col)
+	void OnCollisionEnter2D (Collision2D col)
 	{
-		Debug.Log("Entered Collision");
-		if(HitParticle != null)
+		Debug.Log("Entered Collision: " + col.gameObject.name);
+		if(col.gameObject.tag == "myShip" && isDeadly)
 		{
-			Instantiate(HitParticle,transform.position,Quaternion.identity);
+			if(HitParticle != null)
+			{
+				GameObject obj = (GameObject)Instantiate(HitParticle,col.contacts[0].point,Quaternion.identity);
+				obj.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity*0.5f;
+			}
+			//col.getComponent<Health>().doDamage(damage);
+			Destroy(gameObject);
 		}
+		else if(bounces < BounceNum)
+		{
+				bounces++;
+		}
+		else
+		{
+			if(HitParticle != null)
+			{
+				GameObject obj = (GameObject)Instantiate(HitParticle,col.contacts[0].point,Quaternion.identity);
+				obj.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity*0.5f;
+			}
+			Destroy(gameObject);
+		}
+
 	}
 
 	void LifeTimeFade()

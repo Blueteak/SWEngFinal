@@ -85,6 +85,7 @@ public enum BulletType
 {
 	Default,
 	Spread,
+	SingleBounce,
 	Rocket
 }
 
