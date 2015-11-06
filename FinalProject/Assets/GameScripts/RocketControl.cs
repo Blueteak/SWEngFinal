@@ -13,6 +13,8 @@ public class RocketControl : MonoBehaviour {
 	public float SideThrust;
 
 	public ParticleSystem MainRocket;
+	public ParticleSystem LeftRocket;
+	public ParticleSystem RightRocket;
 
 	//Local Variables
 	Rigidbody2D rb;
@@ -28,6 +30,7 @@ public class RocketControl : MonoBehaviour {
 		{
 			FaceMouse();
 			DoMovement();
+			DoRockets();
 		}
 	}
 
@@ -43,14 +46,27 @@ public class RocketControl : MonoBehaviour {
 	void DoMovement()
 	{
 		if(Input.GetAxis("Vertical") > 0)
-		{
 			rb.AddForce(transform.TransformDirection(Vector2.up)*Input.GetAxis("Vertical")*MainThrust);
-			MainRocket.enableEmission = true;
-		}
-		else
-			MainRocket.enableEmission = false;
 			
 		rb.AddForce(transform.TransformDirection(Vector2.right)*Input.GetAxis("Horizontal")*SideThrust);
+	}
+
+	void DoRockets()
+	{
+		if(Input.GetAxis("Vertical") > 0)
+			MainRocket.enableEmission = true;
+		else
+			MainRocket.enableEmission = false;
+
+		if(Input.GetAxis("Horizontal") > 0)
+			LeftRocket.enableEmission = true;
+		else
+			LeftRocket.enableEmission = false;
+
+		if(Input.GetAxis("Horizontal") < 0)
+			RightRocket.enableEmission = true;
+		else
+			RightRocket.enableEmission = false;
 	}
 
 	public void disableMovement()
