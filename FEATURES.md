@@ -4,7 +4,7 @@
 
 | Feature | Owner |
 | ------ | ----------- |
-| Rocket Faces Mouse Cursor | DONE |
+| Ship Faces Mouse Cursor | DONE |
 | Main Thruster Forward | DONE |
 | Side Thrusters | DONE |
 | Variable Speed Capable | DONE |
@@ -77,7 +77,7 @@
 | Invite friends to party |
 | Join game with party |
 | Facebook Login |
-| Player Rocket Synchronization |
+| Player Ship Synchronization |
 | Network Player Shooting |
 | Synchronized Powerup Pickups |
 | Syncronized Powerup Usage |
