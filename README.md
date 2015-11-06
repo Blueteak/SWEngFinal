@@ -1,6 +1,15 @@
-##Read Me
+#Read Me
 
-#User Stories
+## Team Members:
+* Jonathan Schenker
+* Jonathan Clinton
+* Frank Cao
+* Kevin Liu
+
+## Overview:
+This project is a multiplayer 2D Arcade-Shooter. Players take control small spaceships and battle to the death in an enclosed arena.
+
+##User Stories
 
 * As a user, I want a fun multiplayer game (easy to learn, hard to master)
 * As a user, I want chat while in game
@@ -12,7 +21,7 @@
 * As a user, I want friend system
 * As a user, I want to invite friends to play
 
-# Development Guidelines
+##Development Guidelines
 
 #####How will progress on the project be tracked?
 Progress will be tracked by github commits and email messages.
