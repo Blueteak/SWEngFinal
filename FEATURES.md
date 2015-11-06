@@ -1,16 +1,30 @@
 #Game Features
 
-####Player Control
+######Progress Key
+| Display | Meaning |
+| ------ | ----------- |
+| DONE  | Feature Completed|
+| JS    | In progress by Jonathan Schenker |
+| JC    | In progress by Jonathan Clinton |
+| KL    | In progress by Kevin Liu |
+| FC    | In progress by Frank Cao |
+| DRP-L | Feature Dropped due to Technical Limitations |
+| DRP-S | Feature Dropped for being out of Scope |
+| DRP-R | Feature Dropped to be replaced by different feature |
+| DRP-T | Feature Dropped due to Time Constraints |
+|       | Feature not yet started |
 
-| Feature | Owner |
+###Player Control
+
+| Feature | Progress |
 | ------ | ----------- |
 | Ship Faces Mouse Cursor | DONE |
 | Main Thruster Forward | DONE |
 | Side Thrusters | DONE |
 | Variable Speed Capable | DONE |
 
-####Combat
-| Feature | Owner |
+###Combat
+| Feature | Progress |
 | ------ | ----------- |
 | Attack Damage |
 | Collision Damage |
@@ -20,9 +34,9 @@
 | Spawn Points |
 | Point System |
 
-####Powerups
+###Powerups
 
-| Feature | Owner |
+| Feature | Progress |
 | ------ | ----------- |
 | Pickup System |
 | Powerup Spawn Points |
@@ -34,17 +48,17 @@
 | Damage Shield |
 | Speed Boost |
 
-####Menu UI
+###Menu UI
 
-| Feature | Owner |
+| Feature | Progress |
 | ------ | ----------- |
 | Main Menu |
 | Friends List |
 | Network Connection Indicators |
 
-####Game UI
+###Game UI
 
-| Feature | Owner |
+| Feature | Progress |
 | ------ | ----------- |
 | Health Indicator |
 | Scores |
@@ -52,25 +66,25 @@
 | Minimap |
 | Targeting Reticle | DONE |
 
-####Arenas
+###Arenas
 
-| Feature | Owner |
+| Feature | Progress |
 | ------ | ----------- |
 | Synchronized Arena Spawning |
 | Multiple Arenas |
 | Moving Stage Objects |
 
-####Backend
+###Backend
 
-| Feature | Owner |
+| Feature | Progress |
 | ------ | ----------- |
 | Parse Data Storage |
 | Parse Facebook Login |
 | Photon Networking Mutliplayer |
 
-####Network System
+###Network System
 
-| Feature | Owner |
+| Feature | Progress |
 | ------ | ----------- |
 | Matchmaking |
 | Friends List |
@@ -82,9 +96,9 @@
 | Synchronized Powerup Pickups |
 | Syncronized Powerup Usage |
 
-####Graphics
+###Graphics
 
-| Feature | Owner |
+| Feature | Progress |
 | ------ | ----------- |
 | Spaceship Sprite | DONE |
 | Bullet Sprites |
