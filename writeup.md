@@ -9,3 +9,9 @@ The project goals will be to design a Unity based game. The game will be a multi
 
 Powerups: Powerups will affect a variety of things about the users ships. These range from changing the bullet type the users ships fires to augmentations to the ship itself such as shields and speed boosts. 
 
+# Tools Used
+
+Unity to build to game 
+
+Photon Unity Network for multiplayer integration. 
+
