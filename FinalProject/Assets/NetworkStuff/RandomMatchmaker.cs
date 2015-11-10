@@ -28,6 +28,6 @@ public class RandomMatchmaker : Photon.PunBehaviour
         //base.OnJoinedRoom();
         Debug.Log("Joined Room");
         GameObject player = PhotonNetwork.Instantiate("Ship", Vector3.zero, Quaternion.identity, 0);
-        GetComponent<Camera>().GetComponent<ObjFollow>().target = player.transform;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ObjFollow>().target = player.transform;
     }
 }
