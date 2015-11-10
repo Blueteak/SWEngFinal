@@ -8,7 +8,7 @@ using System.Collections;
 public class RocketControl : MonoBehaviour {
 
 	//Global Variables
-	public bool canMove;
+	public bool canMove = false;
 	public float MainThrust;
 	public float SideThrust;
 

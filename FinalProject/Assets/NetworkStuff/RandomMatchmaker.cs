@@ -28,6 +28,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
         //base.OnJoinedRoom();
         Debug.Log("Joined Room");
         GameObject player = PhotonNetwork.Instantiate("Ship", Vector3.zero, Quaternion.identity, 0);
+        player.GetComponent<RocketControl>().canMove = true;
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ObjFollow>().target = player.transform;
     }
 }
