@@ -15,8 +15,10 @@ public class BulletManager : MonoBehaviour {
 		//Shoot bullet on server
 		string s = BulletDir.toString(pos, rot, vel);
 		s += ":"+type;
-		//Photon pun = GetComponent<Photon>();
-		//pun.RPC("ShootServer",PhotonTargets.Others,s);
+
+        PhotonView pun = GetComponent<PhotonView>();
+
+		pun.RPC("ShootServer",PhotonTargets.Others,s);
 		ShootClient(type,pos,rot,vel); //Shoot bullet on client
 
 	}
@@ -28,13 +30,14 @@ public class BulletManager : MonoBehaviour {
 			if(v.type == type)
 			{
 				GameObject NewBullet = (GameObject)Instantiate(v.Prefab, pos, Quaternion.identity);
+                //GameObject NewBullet = PhotonNetwork.Instantiate(bulletName, pos, Quaternion.identity);
 				NewBullet.transform.eulerAngles = new Vector3(0,0,rot);
 				NewBullet.GetComponent<BulletSpawn>().Init(vel, false);
 			}
 		}
 	}
 	
-	//[PunRPC]
+	[PunRPC]
 	void ShootServer(string s)
 	{
 		BulletDir dir = new BulletDir(s);
