@@ -14,6 +14,8 @@ public class RocketHealth : MonoBehaviour {
 
 	public SpriteRenderer Highlights;
 
+	public bool invincible;
+
 	RocketControl rc;
 
 	
@@ -56,11 +58,17 @@ public class RocketHealth : MonoBehaviour {
 	public void Respawn()
 	{
 		//Reset position to a new spawn point
-
+		invincible = true;
 		rc.canMove = true;
 		curShield = 0;
 		pView.RPC("Reset", PhotonTargets.All);
 		currentHealth = MaxHealth;
+	}
+
+	IEnumerator DisableInvince(float seconds)
+	{
+		yield return new WaitForSeconds(seconds);
+		invincible = false;
 	}
 
 	IEnumerator ResAfterTime(float seconds)
