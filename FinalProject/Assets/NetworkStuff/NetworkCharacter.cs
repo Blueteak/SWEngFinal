@@ -7,10 +7,12 @@ public class NetworkCharacter : Photon.MonoBehaviour
 	public bool givenInput = false;
 	public float LR = 0;
 	RocketControl rcontrol;
+	Rigidbody2D rb;
 
 	void Start()
 	{
 		rcontrol = GetComponent<RocketControl>();
+		rb = GetComponent<Rigidbody2D>();
 		if(!GetComponent<PhotonView>().isMine)
 		{
 			gameObject.tag = "Ship";
@@ -57,6 +59,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
             stream.SendNext(transform.rotation);
 			stream.SendNext(givenInput);
 			stream.SendNext(LR);
+			stream.SendNext(rb.velocity);
         }
         else
         {
@@ -65,6 +68,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
             this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
 			this.givenInput = (bool)stream.ReceiveNext();
 			this.LR = (float)stream.ReceiveNext();
+			rb.velocity = (Vector3)stream.ReceiveNext();
         }
     }
 }

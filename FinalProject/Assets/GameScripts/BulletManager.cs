@@ -48,7 +48,7 @@ public class BulletManager : MonoBehaviour {
 			{
 				GameObject NewBullet = (GameObject)Instantiate(v.Prefab, dir.pos, Quaternion.identity);
 				NewBullet.transform.eulerAngles = new Vector3(0,0,dir.rot);
-				NewBullet.GetComponent<BulletSpawn>().Init(dir.vel, false, dir.playerID);
+				NewBullet.GetComponent<BulletSpawn>().Init(dir.vel, true, dir.playerID);
 			}
 		}
 	}

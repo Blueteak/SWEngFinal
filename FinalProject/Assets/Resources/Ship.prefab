@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunPosition: {fileID: 425036}
   BulletCD: .349999994
-  BType: 2
+  BType: 1
   canShoot: 0
 --- !u!114 &11456672
 MonoBehaviour:
@@ -3822,6 +3822,10 @@ Prefab:
       propertyPath: Highlights
       value: 
       objectReference: {fileID: 21235314}
+    - target: {fileID: 0}
+      propertyPath: BType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128564}
