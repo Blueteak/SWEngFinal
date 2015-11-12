@@ -17,7 +17,7 @@ public class BulletManager : MonoBehaviour {
 		s += ":"+type;
 
         PhotonView pun = GetComponent<PhotonView>();
-
+		Debug.Log(pun);
 		pun.RPC("ShootServer",PhotonTargets.Others,s);
 		ShootClient(type,pos,rot,vel); //Shoot bullet on client
 
