@@ -12,6 +12,7 @@ public class Powerup : MonoBehaviour {
 	void Update () {
 	
 	}
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("Ontriggerenter");

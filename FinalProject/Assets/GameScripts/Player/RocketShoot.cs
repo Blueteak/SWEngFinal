@@ -10,10 +10,13 @@ public class RocketShoot : MonoBehaviour {
 	float timer;
     public bool canShoot = false;
 
+	PhotonView pv;
+
 	// Use this for initialization
 	void Start () 
 	{
 		bmr = FindObjectOfType<BulletManager>();
+		pv = GetComponent<PhotonView>();
         //canShoot = GetComponent<RocketControl>().canMove;
 	}
 	
@@ -31,7 +34,7 @@ public class RocketShoot : MonoBehaviour {
 		        if(Input.GetMouseButton(0))
 		        {
 			        timer = BulletCD;
-			        bmr.Shoot(BType, GunPosition.position, transform.eulerAngles.z, GetComponent<Rigidbody2D>().velocity);
+			        bmr.Shoot(BType, GunPosition.position, transform.eulerAngles.z, GetComponent<Rigidbody2D>().velocity, pv.ownerId);
 		        }
 	        }
         }

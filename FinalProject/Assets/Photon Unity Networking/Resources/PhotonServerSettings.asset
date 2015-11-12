@@ -31,4 +31,6 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupTimes
   - ShootServer
+  - Explode
+  - Reset
   DisableAutoOpenWizard: 1

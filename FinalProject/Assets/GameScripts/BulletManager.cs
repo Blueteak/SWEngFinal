@@ -10,10 +10,10 @@ public class BulletManager : MonoBehaviour {
 
 	public BulletIdentity[] BulletOptions;
 
-	public void Shoot(BulletType type, Vector2 pos, float rot, Vector2 vel)
+	public void Shoot(BulletType type, Vector2 pos, float rot, Vector2 vel, int pID)
 	{
 		//Shoot bullet on server
-		string s = BulletDir.toString(pos, rot, vel);
+		string s = BulletDir.toString(pos, rot, vel, pID);
 		s += ":"+type;
 
         PhotonView pun = GetComponent<PhotonView>();
@@ -32,7 +32,7 @@ public class BulletManager : MonoBehaviour {
 				GameObject NewBullet = (GameObject)Instantiate(v.Prefab, pos, Quaternion.identity);
                 //GameObject NewBullet = PhotonNetwork.Instantiate(bulletName, pos, Quaternion.identity);
 				NewBullet.transform.eulerAngles = new Vector3(0,0,rot);
-				NewBullet.GetComponent<BulletSpawn>().Init(vel, false);
+				NewBullet.GetComponent<BulletSpawn>().Init(vel, false, -1);
 			}
 		}
 	}
@@ -44,11 +44,11 @@ public class BulletManager : MonoBehaviour {
 		string[] vals = s.Split(':');
 		foreach(var v in BulletOptions)
 		{
-			if(v.type.ToString().Equals(vals[5]))
+			if(v.type.ToString().Equals(vals[6]))
 			{
 				GameObject NewBullet = (GameObject)Instantiate(v.Prefab, dir.pos, Quaternion.identity);
 				NewBullet.transform.eulerAngles = new Vector3(0,0,dir.rot);
-				NewBullet.GetComponent<BulletSpawn>().Init(dir.vel, false);
+				NewBullet.GetComponent<BulletSpawn>().Init(dir.vel, false, dir.playerID);
 			}
 		}
 	}
@@ -58,13 +58,14 @@ public class BulletManager : MonoBehaviour {
 //Bullet direction class that can be sent over network as a string
 public class BulletDir
 {
+	public int playerID;
 	public Vector2 pos;
 	public float rot;
 	public Vector2 vel;
 
-	public static string toString(Vector2 p, float r, Vector2 v)
+	public static string toString(Vector2 p, float r, Vector2 v, int pID)
 	{
-		return p.x+":"+p.y+":"+r+":"+v.x+":"+v.y;
+		return p.x+":"+p.y+":"+r+":"+v.x+":"+v.y+":"+pID;
 	}
 
 	public BulletDir(string s)
@@ -77,6 +78,7 @@ public class BulletDir
 		float.TryParse(vals[2], out rot);
 		float.TryParse(vals[3], out vx);
 		float.TryParse(vals[4], out vy);
+		int.TryParse(vals[5], out playerID);
 		pos = new Vector2(x, y);
 	}
 }

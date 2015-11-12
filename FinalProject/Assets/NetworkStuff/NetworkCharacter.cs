@@ -11,6 +11,10 @@ public class NetworkCharacter : Photon.MonoBehaviour
 	void Start()
 	{
 		rcontrol = GetComponent<RocketControl>();
+		if(!GetComponent<PhotonView>().isMine)
+		{
+			gameObject.tag = "Ship";
+		}
 	}
 
     // Update is called once per frame

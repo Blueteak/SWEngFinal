@@ -24,7 +24,6 @@ public class RocketControl : MonoBehaviour {
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		nchar = GetComponent<NetworkCharacter>();
-	
 	}
 
 	void Update () 
