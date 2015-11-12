@@ -16,12 +16,14 @@ public class RocketControl : MonoBehaviour {
 	public ParticleSystem LeftRocket;
 	public ParticleSystem RightRocket;
 
+	NetworkCharacter nchar;
+
 	//Local Variables
 	Rigidbody2D rb;
 
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
-	
+		nchar = GetComponent<NetworkCharacter>();
 	}
 
 	void Update () 
@@ -51,9 +53,16 @@ public class RocketControl : MonoBehaviour {
         if (canMove)
         {
             if (Input.GetAxis("Vertical") > 0)
-                rb.AddForce(transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical") * MainThrust);
-
+			{
+				rb.AddForce(transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical") * MainThrust);
+				nchar.givenInput = true;
+			}
+           
+			nchar.LR = Input.GetAxis("Horizontal");
             rb.AddForce(transform.TransformDirection(Vector2.right) * Input.GetAxis("Horizontal") * SideThrust);
+
+			if(Input.GetAxis("Horizontal") == 0 &&  Input.GetAxis("Vertical") == 0)
+				nchar.givenInput = false;
         }
 	}
 

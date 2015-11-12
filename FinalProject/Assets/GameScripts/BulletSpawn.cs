@@ -8,11 +8,11 @@ using System.Collections;
 
 public class BulletSpawn : MonoBehaviour {
 
-	public void Init(Vector2 v, bool deadly)
+	public void Init(Vector2 v, bool deadly, int pID)
 	{
 		foreach(var o in GetComponentsInChildren<Bullet>())
 		{
-			o.AddVel(v);
+			o.AddVel(v, pID);
 			o.setDeadly(deadly);
 			o.transform.SetParent(null);
 		}

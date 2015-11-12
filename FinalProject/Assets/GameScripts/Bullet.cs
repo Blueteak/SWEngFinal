@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
-	public float damage;
+	public int damage;
 
 	public float Speed;
 	public GameObject HitParticle;
@@ -20,6 +20,8 @@ public class Bullet : MonoBehaviour {
 
 	public GameObject[] Children;
 
+	private int playerID;
+
 	// Use this for initialization
 	IEnumerator Start () 
 	{
@@ -30,9 +32,10 @@ public class Bullet : MonoBehaviour {
 	}
 
 	//Add velocity based on ship that fired
-	public void AddVel(Vector2 vel)
+	public void AddVel(Vector2 vel, int id)
 	{
 		addV = vel;
+		id = playerID;
 	}
 
 	public void setDeadly(bool b)
@@ -51,10 +54,10 @@ public class Bullet : MonoBehaviour {
 				GameObject obj = (GameObject)Instantiate(HitParticle,col.contacts[0].point,Quaternion.identity);
 				obj.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity*0.5f;
 			}
-			//col.getComponent<Health>().doDamage(damage);
+			col.gameObject.GetComponent<RocketHealth>().doDamage(damage, playerID);
 			Destroy(gameObject);
 		}
-		else if(bounces < BounceNum)
+		else if(bounces < BounceNum && col.gameObject.tag != "Ship")
 		{
 				bounces++;
 		}
