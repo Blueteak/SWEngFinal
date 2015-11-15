@@ -55,7 +55,7 @@ public class Note : MonoBehaviour {
 		motion.SetStateToClose();
 		motion.Open();
 		yield return new WaitForSeconds(seconds);
-		motion.SetStateToClose();
+		motion.SetStateToOpen();
 		motion.Close();
 	}
 }
