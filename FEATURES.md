@@ -60,7 +60,7 @@
 
 | Feature | Progress |
 | ------ | ----------- |
-| Health Indicator |
+| Health Indicator | DONE |
 | Scores |
 | Current Gun Type |
 | Minimap |
@@ -91,8 +91,8 @@
 | Invite friends to party |
 | Join game with party |
 | Facebook Login |
-| Player Ship Synchronization |
-| Network Player Shooting |
+| Player Ship Synchronization | DONE |
+| Network Player Shooting | DONE |
 | Synchronized Powerup Pickups |
 | Syncronized Powerup Usage |
 
@@ -105,7 +105,7 @@
 | Powerup Sprites |
 | Powerup Effects |
 | Bullet Effects |
-| Ship Explosion |
+| Ship Explosion | DONE |
 | Ship Thrusters | DONE |
-| Space Effects |
-| Star Field |
+| Space Effects | DONE |
+| Star Field | DONE |
