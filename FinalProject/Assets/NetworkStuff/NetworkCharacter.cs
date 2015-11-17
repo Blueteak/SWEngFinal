@@ -3,6 +3,7 @@
 public class NetworkCharacter : Photon.MonoBehaviour
 {
     private Vector3 correctPlayerPos;
+	private Vector2 curVel;
     private Quaternion correctPlayerRot;
 	public bool givenInput = false;
 	public float LR = 0;
@@ -26,7 +27,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 5);
             transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
-
+			rb.velocity = curVel;
 			//Rocket Particle System Sync
 
 			//				Main Rocket
@@ -68,7 +69,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
             this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
 			this.givenInput = (bool)stream.ReceiveNext();
 			this.LR = (float)stream.ReceiveNext();
-			rb.velocity = (Vector3)stream.ReceiveNext();
+			curVel = (Vector2)stream.ReceiveNext();
         }
     }
 }
