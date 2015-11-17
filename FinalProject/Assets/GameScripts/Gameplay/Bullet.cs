@@ -22,9 +22,18 @@ public class Bullet : MonoBehaviour {
 
 	private int playerID;
 
+	public bool affectGrid;
+	VectorGrid grid;
+
+	public Color forceColor;
+	public bool useColor;
+	public float Force;
+	public float Radius;
+
 	// Use this for initialization
 	IEnumerator Start () 
 	{
+		grid = FindObjectOfType<VectorGrid>();
 		yield return new WaitForEndOfFrame();
 		InvokeRepeating("LifeTimeFade", MaxLifetime, 1);
 		GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(Vector2.up)*Speed;
@@ -42,6 +51,14 @@ public class Bullet : MonoBehaviour {
 	{
 		if(!isDeadly)
 			isDeadly = b;
+	}
+
+	void Update()
+	{
+		if(affectGrid && grid != null)
+		{
+			grid.AddGridForce(transform.position, Force, Radius, forceColor, useColor);
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D col)

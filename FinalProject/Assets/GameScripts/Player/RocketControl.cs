@@ -21,6 +21,8 @@ public class RocketControl : MonoBehaviour {
 	//Local Variables
 	Rigidbody2D rb;
 
+	VectorGrid vGrid;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		nchar = GetComponent<NetworkCharacter>();
@@ -34,6 +36,16 @@ public class RocketControl : MonoBehaviour {
 			DoMovement();
 			DoRockets();
 		}
+		if(vGrid != null)
+			AddForce();
+		else
+			vGrid = FindObjectOfType<VectorGrid>();
+
+	}
+
+	void AddForce()
+	{
+		vGrid.AddGridForce(transform.position, 1, 1f, Color.white, false);
 	}
 
 	void FaceMouse()

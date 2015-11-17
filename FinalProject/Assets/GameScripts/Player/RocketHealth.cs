@@ -80,6 +80,7 @@ public class RocketHealth : MonoBehaviour {
 	[PunRPC]
 	void Reset()
 	{
+		transform.position = Vector3.zero;
 		//Enable Ship Collision
 		GetComponent<Rigidbody2D>().isKinematic = false;
 		GetComponent<PolygonCollider2D>().enabled = true;
@@ -93,6 +94,7 @@ public class RocketHealth : MonoBehaviour {
 	void Explode()
 	{
 		//Disable ship collision
+		FindObjectOfType<VectorGrid>().AddGridForce(transform.position,2,3,Color.red,true);
 		GetComponent<Rigidbody2D>().isKinematic = true;
 		GetComponent<PolygonCollider2D>().enabled = false;
 		Instantiate(ExplEffect, transform.position- Vector3.forward, Quaternion.identity);

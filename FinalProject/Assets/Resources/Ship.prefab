@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunPosition: {fileID: 425036}
   BulletCD: .349999994
-  BType: 1
+  BType: 2
   canShoot: 0
 --- !u!114 &11456672
 MonoBehaviour:
@@ -431,6 +431,7 @@ MonoBehaviour:
   ExplEffect: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 2}
   SpawnEffect: {fileID: 0}
   Highlights: {fileID: 21235314}
+  invincible: 0
 --- !u!114 &11491998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3824,7 +3825,15 @@ Prefab:
       objectReference: {fileID: 21235314}
     - target: {fileID: 0}
       propertyPath: BType
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GridForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GridRadius
+      value: 1.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

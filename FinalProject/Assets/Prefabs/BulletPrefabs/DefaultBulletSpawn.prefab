@@ -108,6 +108,11 @@ MonoBehaviour:
   isDeadly: 0
   MaxLifetime: 1
   Children: []
+  affectGrid: 1
+  forceColor: {r: .625, g: .643103361, b: 1, a: .490999997}
+  useColor: 1
+  Force: 1.5
+  Radius: .5
 --- !u!114 &11481654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,6 +196,38 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: damage
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: affectGrid
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Force
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Radius
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: useColor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: forceColor.r
+      value: .625
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: forceColor.g
+      value: .643103361
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: forceColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: forceColor.a
+      value: .490999997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
