@@ -16,7 +16,7 @@ public class GridMouse : MonoBehaviour {
 	void Update () 
 	{
 		CheckInMenu();
-		if(Input.GetMouseButton(0))
+		if(Input.GetMouseButton(0) && inMenu)
 		{
 			Vector3 mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			mPos.z = 0;

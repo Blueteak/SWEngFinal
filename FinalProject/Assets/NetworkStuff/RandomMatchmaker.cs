@@ -5,6 +5,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
     public GameObject playerPrefab;
 	public GameObject[] Arenas;
 	public EMOpenCloseMotion MainMenu;
+	public EMOpenCloseMotion GameUI;
 
 	GameObject CurrentArena;
 
@@ -33,6 +34,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
     {
         //base.OnJoinedRoom();
 		MainMenu.Close();
+		GameUI.Open();
 		DestroyCurrentArena();
 		SpawnArena(FindObjectOfType<GameSetup>().ArenaIndex);
         Debug.Log("Joined Room");

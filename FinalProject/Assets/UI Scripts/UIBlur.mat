@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New Material
+  m_Name: UIBlur
   m_Shader: {fileID: 4800000, guid: 0877c951d769b4d7796f0f71fe38fb8a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
