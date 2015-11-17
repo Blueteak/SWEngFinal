@@ -26,12 +26,12 @@
 ###Combat
 | Feature | Progress |
 | ------ | ----------- |
-| Attack Damage |
+| Attack Damage | DONE |
 | Collision Damage |
 | Arena Traps |
-| Player Death |
-| Respawn Timer |
-| Spawn Points |
+| Player Death | DONE |
+| Respawn Timer | DONE |
+| Spawn Points | JS
 | Point System |
 
 ###Powerups
@@ -40,8 +40,8 @@
 | ------ | ----------- |
 | Pickup System |
 | Powerup Spawn Points |
-| Shotgun Spread |
-| Bouncing Bullets |
+| Shotgun Spread | DONE |
+| Bouncing Bullets | DONE |
 | Fast Blast |
 | Rocket Barrage |
 | Bullet Circle |
@@ -61,7 +61,7 @@
 | Feature | Progress |
 | ------ | ----------- |
 | Health Indicator | DONE |
-| Scores |
+| Scores | JS |
 | Current Gun Type |
 | Minimap |
 | Targeting Reticle | DONE |
