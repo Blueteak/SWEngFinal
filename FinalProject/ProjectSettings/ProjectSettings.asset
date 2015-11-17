@@ -12,7 +12,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: FinalProject
-  defaultCursor: {fileID: 2800000, guid: 31cea9db7b72c4c89a85716745ddb092, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
   defaultScreenWidth: 1024
