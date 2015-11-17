@@ -8,7 +8,7 @@ public class GameSetup : MonoBehaviour {
 	public void StartGame(int index) 
 	{
 		ArenaIndex = index;
-		FindObjectOfType<Note>().Notify("Success","Finding open room", 1.5f);
+		FindObjectOfType<Note>().Notify("Connected","Finding open room", 1.5f);
 		PhotonNetwork.JoinRandomRoom();
 	}
 }
