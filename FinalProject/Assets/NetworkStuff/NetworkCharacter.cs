@@ -10,6 +10,8 @@ public class NetworkCharacter : Photon.MonoBehaviour
 	RocketControl rcontrol;
 	Rigidbody2D rb;
 
+	public SpriteRenderer MinimapMark;
+
 	void Start()
 	{
 		rcontrol = GetComponent<RocketControl>();
@@ -17,6 +19,11 @@ public class NetworkCharacter : Photon.MonoBehaviour
 		if(!GetComponent<PhotonView>().isMine)
 		{
 			gameObject.tag = "Ship";
+			MinimapMark.color = Color.red;
+		}
+		else
+		{
+			MinimapMark.color = Color.green;
 		}
 	}
 

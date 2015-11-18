@@ -93,6 +93,14 @@ Material:
         second: .5
       data:
         first:
+          name: _BumpAmt
+        second: 10
+      data:
+        first:
+          name: _Size
+        second: 1
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -127,14 +135,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _BumpAmt
-        second: 10
-      data:
-        first:
-          name: _Size
-        second: 1
     m_Colors:
       data:
         first:

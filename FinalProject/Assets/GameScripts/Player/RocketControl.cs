@@ -73,7 +73,7 @@ public class RocketControl : MonoBehaviour {
 			nchar.LR = Input.GetAxis("Horizontal");
             rb.AddForce(transform.TransformDirection(Vector2.right) * Input.GetAxis("Horizontal") * SideThrust);
 
-			if(Input.GetAxis("Horizontal") == 0 &&  Input.GetAxis("Vertical") == 0)
+			if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
 				nchar.givenInput = false;
         }
 	}
