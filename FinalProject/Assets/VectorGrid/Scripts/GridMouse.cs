@@ -19,8 +19,8 @@ public class GridMouse : MonoBehaviour {
 		if(Input.GetMouseButton(0) && inMenu)
 		{
 			Vector3 mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			mPos.z = 0;
-			grid.AddGridForce(mPos, .5f, .8f, Color.white, false);
+			mPos.z = 0.25f;
+			grid.AddGridForce(mPos, .5f, .5f, Color.white, false);
 		}
 	}
 
