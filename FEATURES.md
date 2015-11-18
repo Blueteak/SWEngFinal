@@ -63,7 +63,7 @@
 | Health Indicator | DONE |
 | Scores | JS |
 | Current Gun Type |
-| Minimap |
+| Minimap | DONE |
 | Targeting Reticle | DONE |
 
 ###Arenas
