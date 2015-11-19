@@ -33,7 +33,7 @@ public class RocketControl : MonoBehaviour {
 		if(canMove)
 		{
 			FaceMouse();
-			DoMovement();
+
 			DoRockets();
 		}
 		if(vGrid != null)
@@ -41,6 +41,11 @@ public class RocketControl : MonoBehaviour {
 		else
 			vGrid = FindObjectOfType<VectorGrid>();
 
+	}
+
+	void FixedUpdate()
+	{
+		DoMovement();
 	}
 
 	void AddForce()
@@ -66,12 +71,12 @@ public class RocketControl : MonoBehaviour {
         {
             if (Input.GetAxis("Vertical") > 0)
 			{
-				rb.AddForce(transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical") * MainThrust);
+				rb.AddForce(transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical") * MainThrust*Time.fixedDeltaTime);
 				nchar.givenInput = true;
 			}
            
 			nchar.LR = Input.GetAxis("Horizontal");
-            rb.AddForce(transform.TransformDirection(Vector2.right) * Input.GetAxis("Horizontal") * SideThrust);
+			rb.AddForce(transform.TransformDirection(Vector2.right) * Input.GetAxis("Horizontal")*SideThrust*Time.fixedDeltaTime);
 
 			if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
 				nchar.givenInput = false;

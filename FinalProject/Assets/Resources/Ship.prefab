@@ -438,8 +438,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 0
-  MainThrust: 7
-  SideThrust: 6
+  MainThrust: 260
+  SideThrust: 200
   MainRocket: {fileID: 19891620}
   LeftRocket: {fileID: 19894086}
   RightRocket: {fileID: 19830506}
@@ -3907,6 +3907,14 @@ Prefab:
       propertyPath: MinimapMark
       value: 
       objectReference: {fileID: 21241366}
+    - target: {fileID: 0}
+      propertyPath: MainThrust
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SideThrust
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128564}
