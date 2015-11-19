@@ -12,6 +12,8 @@ public class RocketControl : MonoBehaviour {
 	public float MainThrust;
 	public float SideThrust;
 
+	public float Boost;
+
 	public ParticleSystem MainRocket;
 	public ParticleSystem LeftRocket;
 	public ParticleSystem RightRocket;
@@ -47,6 +49,11 @@ public class RocketControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		if(Boost > 0)
+			Boost -= Time.fixedDeltaTime*Boost*0.25f;
+		else
+			Boost = 0;
+
 		DoMovement();
 	}
 
@@ -57,6 +64,11 @@ public class RocketControl : MonoBehaviour {
 		else
 			vGrid.AddGridForce(transform.position, 1, 0.9f, TrailColor, false);
 
+	}
+
+	public void SetBoost(int boostAmount)
+	{
+		Boost += boostAmount;
 	}
 
 	void FaceMouse()
@@ -77,12 +89,12 @@ public class RocketControl : MonoBehaviour {
         {
             if (Input.GetAxis("Vertical") > 0)
 			{
-				rb.AddForce(transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical") * MainThrust*Time.fixedDeltaTime);
+				rb.AddForce(transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical") * (MainThrust + Boost) * Time.fixedDeltaTime);
 				nchar.givenInput = true;
 			}
            
 			nchar.LR = Input.GetAxis("Horizontal");
-			rb.AddForce(transform.TransformDirection(Vector2.right) * Input.GetAxis("Horizontal")*SideThrust*Time.fixedDeltaTime);
+			rb.AddForce(transform.TransformDirection(Vector2.right) * Input.GetAxis("Horizontal") * (SideThrust + Boost) * Time.fixedDeltaTime);
 
 			if(Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
 				nchar.givenInput = false;

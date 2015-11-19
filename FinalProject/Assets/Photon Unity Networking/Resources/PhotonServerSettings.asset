@@ -33,4 +33,6 @@ MonoBehaviour:
   - ShootServer
   - Explode
   - Reset
+  - pickup
+  - PickupObj
   DisableAutoOpenWizard: 1

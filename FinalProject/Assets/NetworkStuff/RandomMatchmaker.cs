@@ -7,6 +7,8 @@ public class RandomMatchmaker : Photon.PunBehaviour
 	public EMOpenCloseMotion MainMenu;
 	public EMOpenCloseMotion GameUI;
 
+	public bool testArena;
+
 	GameObject CurrentArena;
 
     // Use this for initialization
@@ -22,7 +24,8 @@ public class RandomMatchmaker : Photon.PunBehaviour
     public override void OnJoinedLobby()
     {
         Debug.Log("Joined Lobby");
-        //PhotonNetwork.JoinRandomRoom();
+		if(testArena)
+        	PhotonNetwork.JoinRandomRoom();
     }
     void OnPhotonRandomJoinFailed()
     {
@@ -33,7 +36,8 @@ public class RandomMatchmaker : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         //base.OnJoinedRoom();
-		MainMenu.Close();
+		if(MainMenu != null)
+			MainMenu.Close();
 		GameUI.Open();
 		DestroyCurrentArena();
 		SpawnArena(FindObjectOfType<GameSetup>().ArenaIndex);
