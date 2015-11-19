@@ -23,6 +23,8 @@ public class RocketControl : MonoBehaviour {
 
 	VectorGrid vGrid;
 
+	public Color TrailColor;
+
 	void Start () {
 		rb = GetComponent<Rigidbody2D>();
 		nchar = GetComponent<NetworkCharacter>();
@@ -50,7 +52,11 @@ public class RocketControl : MonoBehaviour {
 
 	void AddForce()
 	{
-		vGrid.AddGridForce(transform.position, 1, 1f, Color.white, false);
+		if(canMove)
+			vGrid.AddGridForce(transform.position, 1, 0.9f, TrailColor, true);
+		else
+			vGrid.AddGridForce(transform.position, 1, 0.9f, TrailColor, false);
+
 	}
 
 	void FaceMouse()
