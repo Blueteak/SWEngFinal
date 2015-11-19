@@ -3,8 +3,7 @@ using System.Collections;
 
 [RequireComponent (typeof(PhotonView))] // Synced in network
 public class Powerup : MonoBehaviour {
-
-	public float RespawnTime;
+	
 	private float StartScale;
     public bool pickedUp = false;
 
@@ -22,7 +21,6 @@ public class Powerup : MonoBehaviour {
 			DoEffect(collision.gameObject);
 			GetComponent<PhotonView>().RPC("PickupObj", PhotonTargets.All);
         }
-		Invoke("RespawnPowerup", RespawnTime);
     }
 
 	[PunRPC]
@@ -40,7 +38,12 @@ public class Powerup : MonoBehaviour {
 			transform.localScale -= Time.deltaTime*Vector3.one*4*StartScale;
 			yield return true;
 		}
-		transform.localScale = Vector3.zero;	
+		transform.localScale = Vector3.zero;
+
+		//Invoke() can be called multiple times out of order
+		//using sequential code to respawn after despawn
+		yield return new WaitForSeconds(5.0f);
+		RespawnPowerup();
 	}
 
 	IEnumerator Spawn()

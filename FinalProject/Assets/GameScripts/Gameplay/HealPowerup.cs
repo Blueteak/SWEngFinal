@@ -12,7 +12,7 @@ public class HealPowerup : Powerup
 			DoEffect(collision.gameObject);
 			GetComponent<PhotonView>().RPC("PickupObj", PhotonTargets.All);
 		}
-		Invoke("RespawnPowerup", RespawnTime);
+		Invoke("RespawnPowerup", 5f);
 	}
 
 	public override void DoEffect (GameObject target) 
