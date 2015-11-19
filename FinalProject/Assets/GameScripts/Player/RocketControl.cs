@@ -49,6 +49,7 @@ public class RocketControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+        rb.angularVelocity = 0;
 		if(Boost > 0)
 			Boost -= Time.fixedDeltaTime*Boost*0.25f;
 		else
