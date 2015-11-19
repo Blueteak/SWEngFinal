@@ -58,7 +58,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
 	{
 		if(index < Arenas.Length)
 		{
-			CurrentArena = (GameObject)Instantiate(Arenas[index]);
+			CurrentArena = PhotonNetwork.Instantiate(Arenas[index].name, Vector3.zero, Quaternion.identity, 0);
 		}
 		else
 			CurrentArena = (GameObject)Instantiate(Arenas[0]);
