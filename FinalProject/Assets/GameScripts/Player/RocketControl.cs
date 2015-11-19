@@ -47,6 +47,7 @@ public class RocketControl : MonoBehaviour {
 
 	}
 
+
 	void FixedUpdate()
 	{
         rb.angularVelocity = 0;
@@ -78,7 +79,6 @@ public class RocketControl : MonoBehaviour {
         {
             Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             diff.Normalize();
-
             float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
         }
@@ -93,7 +93,7 @@ public class RocketControl : MonoBehaviour {
 				rb.AddForce(transform.TransformDirection(Vector2.up) * Input.GetAxis("Vertical") * (MainThrust + Boost) * Time.fixedDeltaTime);
 				nchar.givenInput = true;
 			}
-           
+         
 			nchar.LR = Input.GetAxis("Horizontal");
 			rb.AddForce(transform.TransformDirection(Vector2.right) * Input.GetAxis("Horizontal") * (SideThrust + Boost) * Time.fixedDeltaTime);
 
