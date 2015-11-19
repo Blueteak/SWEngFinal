@@ -6,7 +6,7 @@ public class Powerup : MonoBehaviour {
 
 	public float RespawnTime;
 	private float StartScale;
-    bool pickedUp = false;
+    public bool pickedUp = false;
 
 	void Start()
 	{
@@ -15,14 +15,14 @@ public class Powerup : MonoBehaviour {
 		StartCoroutine("Spawn");
 	}
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (pickedUp == false && collision.tag == "myShip")
         {
 			DoEffect(collision.gameObject);
 			GetComponent<PhotonView>().RPC("PickupObj", PhotonTargets.All);
         }
-        Invoke("RespawnPowerup", 5.0f);
+		Invoke("RespawnPowerup", RespawnTime);
     }
 
 	[PunRPC]
