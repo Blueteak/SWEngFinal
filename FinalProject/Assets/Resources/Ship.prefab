@@ -95,7 +95,6 @@ GameObject:
   - 50: {fileID: 5021516}
   - 114: {fileID: 11424044}
   - 60: {fileID: 6059832}
-  - 114: {fileID: 11491998}
   - 114: {fileID: 11456672}
   - 114: {fileID: 11476246}
   m_Layer: 0
@@ -410,15 +409,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunPosition: {fileID: 425036}
   BulletCD: .349999994
+<<<<<<< Updated upstream
   BType: 2
   canShoot: 0
+=======
+  BType: 1
+  canShoot: 1
+>>>>>>> Stashed changes
 --- !u!114 &11456672
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a0a4a50f56aefc4690719552fd4ff6f, type: 3}
   m_Name: 
@@ -437,10 +441,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eccd123908a0472fbb0698d50d359ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   canMove: 0
   MainThrust: 260
   SideThrust: 200
   Boost: 0
+=======
+  canMove: 1
+  MainThrust: 7
+  SideThrust: 6
+>>>>>>> Stashed changes
   MainRocket: {fileID: 19891620}
   LeftRocket: {fileID: 19894086}
   RightRocket: {fileID: 19830506}
@@ -463,6 +473,7 @@ MonoBehaviour:
   ExplEffect: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 2}
   SpawnEffect: {fileID: 0}
   Highlights: {fileID: 21235314}
+<<<<<<< Updated upstream
   invincible: 0
 --- !u!114 &11491998
 MonoBehaviour:
@@ -489,6 +500,8 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
+=======
+>>>>>>> Stashed changes
 --- !u!198 &19830506
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3847,7 +3860,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: canMove
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: synchronization
@@ -3930,12 +3943,21 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+<<<<<<< Updated upstream
       propertyPath: TrailColor.a
       value: .352999985
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: .200000003
+=======
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
