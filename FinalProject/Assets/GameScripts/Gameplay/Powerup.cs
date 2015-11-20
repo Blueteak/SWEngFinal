@@ -7,6 +7,8 @@ public class Powerup : MonoBehaviour {
 	private float StartScale;
     public bool pickedUp = false;
 
+	public float RespawnTime;
+
 	void Start()
 	{
 		StartScale = transform.localScale.x;
@@ -42,7 +44,7 @@ public class Powerup : MonoBehaviour {
 
 		//Invoke() can be called multiple times out of order
 		//using sequential code to respawn after despawn
-		yield return new WaitForSeconds(5.0f);
+		yield return new WaitForSeconds(RespawnTime);
 		RespawnPowerup();
 	}
 

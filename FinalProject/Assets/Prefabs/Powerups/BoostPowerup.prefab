@@ -55,8 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f660997ded9f4e3aae83a2f9953242c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnTime: 5
   pickedUp: 0
+  RespawnTime: 8
   BoostAmount: 1000
 --- !u!114 &11490564
 MonoBehaviour:
@@ -123,6 +123,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RespawnTime
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

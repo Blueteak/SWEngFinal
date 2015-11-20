@@ -55,8 +55,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7445fb01c344241afdb41ec3767cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnTime: 5
   pickedUp: 0
+  RespawnTime: 8
   ShieldAmount: 80
 --- !u!114 &11464050
 MonoBehaviour:
@@ -123,7 +123,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: RespawnTime
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z

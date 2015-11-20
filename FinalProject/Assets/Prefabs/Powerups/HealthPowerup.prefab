@@ -80,8 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74505beff8530413b8df3a1a0b43d6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnTime: 5
   pickedUp: 0
+  RespawnTime: 5
   HealAmount: 50
 --- !u!212 &21201222
 SpriteRenderer:
