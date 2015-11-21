@@ -35,4 +35,5 @@ MonoBehaviour:
   - Reset
   - pickup
   - PickupObj
+  - Adjust
   DisableAutoOpenWizard: 1

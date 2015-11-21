@@ -41,14 +41,12 @@ public class RandomMatchmaker : Photon.PunBehaviour
     }
     public override void OnJoinedLobby()
     {
-        Debug.Log("Joined Lobby");
 		if(testArena)
         	PhotonNetwork.JoinRandomRoom();
     }
     void OnPhotonRandomJoinFailed()
     {
 		FindObjectOfType<Note>().Notify("No open games","Creating new room.", 1.5f);
-        Debug.Log("Can't join random room!");
         PhotonNetwork.CreateRoom(null);
     }
     public override void OnJoinedRoom()
@@ -59,7 +57,6 @@ public class RandomMatchmaker : Photon.PunBehaviour
 		GameUI.Open();
 		DestroyCurrentArena();
 		SpawnArena(FindObjectOfType<GameSetup>().ArenaIndex);
-        Debug.Log("Joined Room");
         GameObject player = PhotonNetwork.Instantiate("Ship", Vector3.zero, Quaternion.identity, 0);
         player.GetComponent<RocketControl>().canMove = true;
         player.GetComponent<RocketShoot>().canShoot = true;
