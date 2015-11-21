@@ -38,8 +38,8 @@
 
 | Feature | Progress |
 | ------ | ----------- |
-| Pickup System |
-| Powerup Spawn Points |
+| Pickup System | DONE |
+| Powerup Spawn Points | DONE |
 | Shotgun Spread | DONE |
 | Bouncing Bullets | DONE |
 | Fast Blast |
@@ -70,7 +70,7 @@
 
 | Feature | Progress |
 | ------ | ----------- |
-| Synchronized Arena Spawning |
+| Synchronized Arena Spawning | DONE |
 | Multiple Arenas |
 | Moving Stage Objects |
 
@@ -80,7 +80,7 @@
 | ------ | ----------- |
 | Parse Data Storage |
 | Parse Facebook Login |
-| Photon Networking Mutliplayer |
+| Photon Networking Mutliplayer | DONE |
 
 ###Network System
 
@@ -93,8 +93,8 @@
 | Facebook Login |
 | Player Ship Synchronization | DONE |
 | Network Player Shooting | DONE |
-| Synchronized Powerup Pickups |
-| Syncronized Powerup Usage |
+| Synchronized Powerup Pickups | DONE |
+| Syncronized Powerup Usage | DONE |
 
 ###Graphics
 
@@ -102,8 +102,8 @@
 | ------ | ----------- |
 | Spaceship Sprite | DONE |
 | Bullet Sprites |
-| Powerup Sprites |
-| Powerup Effects |
+| Powerup Sprites | DONE |
+| Powerup Effects | DONE |
 | Bullet Effects |
 | Ship Explosion | DONE |
 | Ship Thrusters | DONE |
