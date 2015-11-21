@@ -8,8 +8,9 @@ public class ScoreKeeper : MonoBehaviour {
 	public List<Score> GameScores;
 	public Text ScoreLabel;
 
-	void ChangeScore(int id, int change)
+	public void ChangeScore(int id, int change)
 	{
+		Debug.Log("Changed Score");
 		string s = id+":"+change;
 		GetComponent<PhotonView>().RPC("Adjust", PhotonTargets.All,s);
 	}
@@ -22,7 +23,7 @@ public class ScoreKeeper : MonoBehaviour {
 			GameScores.Sort((x, y) => x.currentScore.CompareTo(y.currentScore));
 			foreach(var v in GameScores)
 			{
-				s+= v.Name + " -- " + v.currentScore;
+				s+= v.Name + ":  " + v.currentScore;
 			}
 			ScoreLabel.text = s;
 		}
@@ -33,6 +34,7 @@ public class ScoreKeeper : MonoBehaviour {
 	[PunRPC]
 	void Adjust(string s)
 	{
+		Debug.Log("Adjust: " + s);
 		string[] vals = s.Split(':');
 		int id,val;
 		int.TryParse(vals[0], out id);

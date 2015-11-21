@@ -53,12 +53,23 @@ public class RocketHealth : MonoBehaviour {
 		curShield -= dmg;
 		if(curShield < 0)
 		{
+			if(playerID != PhotonNetwork.player.ID)
+				FindObjectOfType<ScoreKeeper>().ChangeScore(playerID, 20);
 			currentHealth += curShield;
 			curShield = 0;
+		}
+		else
+		{
+			if(playerID != PhotonNetwork.player.ID)
+				FindObjectOfType<ScoreKeeper>().ChangeScore(playerID, 15);
 		}
 
 		if(currentHealth <= 0)
 		{
+			if(playerID != PhotonNetwork.player.ID)
+				FindObjectOfType<ScoreKeeper>().ChangeScore(playerID, 80);
+			else
+				FindObjectOfType<ScoreKeeper>().ChangeScore(playerID, -50);
 			rc.disableMovement();
 			StartCoroutine("ResAfterTime", 1.5f);
 			pView.RPC("Explode", PhotonTargets.All);

@@ -17,9 +17,8 @@ public class BulletManager : MonoBehaviour {
 		s += ":"+type;
 
         PhotonView pun = GetComponent<PhotonView>();
-		Debug.Log(pun);
 		pun.RPC("ShootServer",PhotonTargets.All,s);
-		ShootClient(type,pos,rot,vel); //Shoot bullet on client
+		//ShootClient(type,pos,rot,vel); //Shoot bullet on client
 
 	}
 
@@ -32,7 +31,7 @@ public class BulletManager : MonoBehaviour {
 				GameObject NewBullet = (GameObject)Instantiate(v.Prefab, pos, Quaternion.identity);
                 //GameObject NewBullet = PhotonNetwork.Instantiate(bulletName, pos, Quaternion.identity);
 				NewBullet.transform.eulerAngles = new Vector3(0,0,rot);
-				NewBullet.GetComponent<BulletSpawn>().Init(vel, false, -1);
+				NewBullet.GetComponent<BulletSpawn>().Init(vel, false, PhotonNetwork.player.ID);
 			}
 		}
 	}

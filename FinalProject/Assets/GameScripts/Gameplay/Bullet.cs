@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour {
 	public void AddVel(Vector2 vel, int id)
 	{
 		addV = vel;
-		id = playerID;
+		playerID = id;
 	}
 
 	public void setDeadly(bool b)

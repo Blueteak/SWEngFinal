@@ -48,7 +48,7 @@ public class RocketShoot : MonoBehaviour {
 		        if(Input.GetMouseButton(0))
 		        {
 			        timer = BulletCD;
-			        bmr.Shoot(BType, GunPosition.position, transform.eulerAngles.z, GetComponent<Rigidbody2D>().velocity, pv.ownerId);
+			        bmr.Shoot(BType, GunPosition.position, transform.eulerAngles.z, GetComponent<Rigidbody2D>().velocity, PhotonNetwork.player.ID);
 		        }
 	        }
         }
