@@ -31,7 +31,7 @@
 | Arena Traps |
 | Player Death | DONE |
 | Respawn Timer | DONE |
-| Spawn Points | JS
+| Spawn Points | DONE |
 | Point System |
 
 ###Powerups
