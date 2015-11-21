@@ -16,7 +16,10 @@ public class RocketHealth : MonoBehaviour {
 
 	public bool invincible;
 
+	public Transform[] SpawnPoints;
+
 	RocketControl rc;
+	bool hasPoints;
 
 	
 	void Start () {
@@ -24,6 +27,24 @@ public class RocketHealth : MonoBehaviour {
 		rc = GetComponent<RocketControl>();
 		if(pView.isMine)
 			Respawn();
+
+	}
+
+	void Update()
+	{
+		if(!hasPoints)
+		{
+			GameObject[] Spoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+			if(Spoints.Length > 0)
+			{
+				SpawnPoints = new Transform[Spoints.Length];
+				for(int i=0; i<Spoints.Length; i++)
+				{
+					SpawnPoints[i] = Spoints[i].transform;
+				}
+				hasPoints = true;
+			}
+		}
 	}
 
 	public void doDamage(int dmg, int playerID)
@@ -80,7 +101,7 @@ public class RocketHealth : MonoBehaviour {
 	[PunRPC]
 	void Reset()
 	{
-		transform.position = Vector3.zero;
+		FarthestSpawnPoint();
 		//Enable Ship Collision
 		GetComponent<Rigidbody2D>().isKinematic = false;
 		GetComponent<PolygonCollider2D>().enabled = true;
@@ -88,6 +109,29 @@ public class RocketHealth : MonoBehaviour {
 		//Instantiate(SpawnEffect, transform.position - Vector3.forward, Quaternion.identity);
 		GetComponent<SpriteRenderer>().enabled = true;
 		Highlights.enabled = true;
+	}
+
+	void FarthestSpawnPoint()
+	{
+		if(SpawnPoints.Length > 0)
+		{
+			float maxDist = 0;
+			int curIndex = 0;
+			for(int i=0; i<SpawnPoints.Length; i++)
+			{
+				float d = Vector2.Distance(SpawnPoints[i].position, transform.position);
+				if(d > maxDist)
+				{
+					maxDist = d;
+					curIndex = i;
+				}
+			}
+			transform.position = SpawnPoints[curIndex].position;
+		}
+		else
+		{
+			transform.position = Vector3.zero;
+		}
 	}
 
 	[PunRPC]
