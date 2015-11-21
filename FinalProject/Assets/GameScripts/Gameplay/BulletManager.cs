@@ -18,7 +18,7 @@ public class BulletManager : MonoBehaviour {
 
         PhotonView pun = GetComponent<PhotonView>();
 		Debug.Log(pun);
-		pun.RPC("ShootServer",PhotonTargets.Others,s);
+		pun.RPC("ShootServer",PhotonTargets.All,s);
 		ShootClient(type,pos,rot,vel); //Shoot bullet on client
 
 	}
@@ -79,6 +79,7 @@ public class BulletDir
 		float.TryParse(vals[3], out vx);
 		float.TryParse(vals[4], out vy);
 		int.TryParse(vals[5], out playerID);
+		vel = new Vector2(vx, vy);
 		pos = new Vector2(x, y);
 	}
 }
