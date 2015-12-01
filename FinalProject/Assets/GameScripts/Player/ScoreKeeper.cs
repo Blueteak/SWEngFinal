@@ -33,6 +33,20 @@ public class ScoreKeeper : MonoBehaviour {
 			ScoreLabel.text = "";
 	}
 
+	public void ResetScores()
+	{
+		GetComponent<PhotonView>().RPC("resetAll", PhotonTargets.All);
+	}
+
+	[PunRPC]
+	void resetAll()
+	{
+		foreach(var s in GameScores)
+		{
+			s.currentScore = 0;
+		}
+	}
+
 	[PunRPC]
 	void Adjust(string s)
 	{
