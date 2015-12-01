@@ -27,6 +27,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
 		{
 			SpawnArena(0);
 		}
+        
 	}
 
     void OnGUI()
@@ -54,6 +55,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
 		FindObjectOfType<Note>().Notify("No open games","Creating new room.", 1.5f);
         PhotonNetwork.CreateRoom(null, new RoomOptions(){maxPlayers = 5}, null);
     }
+    
     public override void OnJoinedRoom()
     {
         //base.OnJoinedRoom();
@@ -87,4 +89,18 @@ public class RandomMatchmaker : Photon.PunBehaviour
 		}
 
 	}
+    public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+    {
+        //base.OnPhotonPlayerConnected(newPlayer);
+        if (PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length == 5)
+        {
+            Debug.Log("Game Start ");
+            Debug.Log("Num Players: " + PhotonNetwork.playerList.Length);
+            //Show countdown in GUI
+            //set players to spawn locations
+            //Reset scores
+            FindObjectOfType<ScoreKeeper>().ResetScores();
+            //Start Game Timer
+        }
+    }
 }
