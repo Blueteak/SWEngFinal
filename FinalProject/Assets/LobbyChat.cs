@@ -4,19 +4,20 @@ using ExitGames.Client.Photon.Chat;
 public class LobbyChat : MonoBehaviour {
 
 	public static string appID = "8b07b1f6-0303-490c-a8e2-b6157b7bfa81";
-	public ChatClient chat;
+	public IChatClientListener lsr;
+	public ChatClient chatClient;
 	// Use this for initialization
 	void LoginChat (string username) 
 	{
-		//chat = new ChatClient(chat, ExitGames.Client.Photon.ConnectionProtocol.Udp);
-//		chat.Connect( appID, "1.0", username, null);
-		chat.Subscribe(new string[] {"lobby"});
+		chatClient = new ChatClient( lsr , ExitGames.Client.Photon.ConnectionProtocol.Udp);
+		chatClient.Connect( appID, "1.0", null );
+		chatClient.Subscribe(new string[] {"lobby"});
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		chat.Service();
+		chatClient.Service();
 	}
 
 	public void OnGetMessages( string channelName, string[] senders, object[] messages )
@@ -31,7 +32,7 @@ public class LobbyChat : MonoBehaviour {
 
 	public void OnPrivateMessage( string sender, object message, string channelName )
 	{
-		ChatChannel ch = chat.PrivateChannels[ channelName ];
+		ChatChannel ch = chatClient.PrivateChannels[ channelName ];
 		foreach ( object msg in ch.Messages )
 		{
 			Debug.Log( msg );
