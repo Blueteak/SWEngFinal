@@ -20,11 +20,12 @@ public class ScoreKeeper : MonoBehaviour {
 		if(GameScores.Count > 0 && PhotonNetwork.inRoom)
 		{
 			string s = "";
-			GameScores.Sort((x, y) => x.currentScore.CompareTo(y.currentScore));
+			GameScores.Sort((x,y) => x.Name.CompareTo(y.Name));
+			GameScores.Sort((x, y) => y.currentScore.CompareTo(x.currentScore));
 			foreach(var v in GameScores)
 			{
 				string name = v.Name.Split(':')[0];
-				s+= name + ":  " + v.currentScore;
+				s+= name + ":  " + v.currentScore+"\n";
 			}
 			ScoreLabel.text = s;
 		}
@@ -55,13 +56,13 @@ public class ScoreKeeper : MonoBehaviour {
 		UpdateList();
 	}
 
-	void OnPlayerConnected()
+	void OnPhotonPlayerDisconnected()
 	{
-		Debug.Log("Player Disconnected");
+		Debug.Log("Player Connected");
 		UpdateList();
 	}
 
-	void OnlayerJoined()
+	void OnPhotonPlayerConnected()
 	{
 		Debug.Log("Player Connected");
 		UpdateList();
