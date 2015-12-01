@@ -23,7 +23,8 @@ public class ScoreKeeper : MonoBehaviour {
 			GameScores.Sort((x, y) => x.currentScore.CompareTo(y.currentScore));
 			foreach(var v in GameScores)
 			{
-				s+= v.Name + ":  " + v.currentScore;
+				string name = v.Name.Split(':')[0];
+				s+= name + ":  " + v.currentScore;
 			}
 			ScoreLabel.text = s;
 		}

@@ -11,8 +11,8 @@ public class UserLogin : MonoBehaviour
 	{
 		if(PhotonNetwork.insideLobby)
 		{
-			Debug.Log("Logged in as: " + username);
-			PhotonNetwork.playerName = username;
+			PhotonNetwork.playerName = username+":"+Random.Range(0,100000000);
+			Debug.Log("Logged in as: " + PhotonNetwork.playerName);
 			ThisPanel.Close();
 			MenuPanel.Open();
 		}

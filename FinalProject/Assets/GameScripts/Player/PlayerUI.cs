@@ -13,7 +13,7 @@ public class PlayerUI : MonoBehaviour {
 		if(transform.parent.tag != "myShip")
 		{
 			name = transform.parent.GetComponent<PhotonView>().owner.name;
-			nameText.text = name;
+			nameText.text = name.Split(':')[0];
 		}
 	}
 	
