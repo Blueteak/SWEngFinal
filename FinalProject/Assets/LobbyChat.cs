@@ -8,8 +8,8 @@ public class LobbyChat : MonoBehaviour {
 	// Use this for initialization
 	void LoginChat (string username) 
 	{
-		chat = new ChatClient(this, ExitGames.Client.Photon.ConnectionProtocol.Udp);
-		chat.Connect( appID, "1.0", username, null);
+		//chat = new ChatClient(chat, ExitGames.Client.Photon.ConnectionProtocol.Udp);
+//		chat.Connect( appID, "1.0", username, null);
 		chat.Subscribe(new string[] {"lobby"});
 	}
 	
