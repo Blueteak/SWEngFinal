@@ -7,7 +7,7 @@
 * Kevin Liu
 
 ## Overview:
-This project is a multiplayer 2D Arcade-Shooter. Players take control small spaceships and battle to the death in an enclosed arena.
+This project is a multiplayer 2D Arcade-Shooter. Players take control of small spaceships and battle to the death in an enclosed arena.
 
 ##User Stories
 
