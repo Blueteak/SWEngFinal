@@ -52,7 +52,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
     void OnPhotonRandomJoinFailed()
     {
 		FindObjectOfType<Note>().Notify("No open games","Creating new room.", 1.5f);
-        PhotonNetwork.CreateRoom(null);
+        PhotonNetwork.CreateRoom(null, new RoomOptions(){maxPlayers = 5}, null);
     }
     public override void OnJoinedRoom()
     {
