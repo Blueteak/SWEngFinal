@@ -22,6 +22,11 @@ public class RandomMatchmaker : Photon.PunBehaviour
 	void Update()
 	{
 		deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+
+		if(PhotonNetwork.isMasterClient && CurrentArena == null)
+		{
+			SpawnArena(0);
+		}
 	}
 
     void OnGUI()
@@ -71,11 +76,15 @@ public class RandomMatchmaker : Photon.PunBehaviour
 
 	void SpawnArena(int index)
 	{
-		if(index < Arenas.Length)
+		if(PhotonNetwork.isMasterClient)
 		{
-			CurrentArena = PhotonNetwork.Instantiate(Arenas[index].name, Vector3.zero, Quaternion.identity, 0);
+			if(index < Arenas.Length)
+			{
+				CurrentArena = PhotonNetwork.Instantiate(Arenas[index].name, Vector3.zero, Quaternion.identity, 0);
+			}
+			else
+				CurrentArena = PhotonNetwork.Instantiate(Arenas[0].name, Vector3.zero, Quaternion.identity, 0);
 		}
-		else
-			CurrentArena = PhotonNetwork.Instantiate(Arenas[0].name, Vector3.zero, Quaternion.identity, 0);
+
 	}
 }
