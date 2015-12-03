@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UserLogin : MonoBehaviour 
 {
-	
+	public ChatSystem cs;
 	public EMOpenCloseMotion ThisPanel;
 	public EMOpenCloseMotion MenuPanel;
 
@@ -15,6 +15,7 @@ public class UserLogin : MonoBehaviour
 			Debug.Log("Logged in as: " + PhotonNetwork.playerName);
 			ThisPanel.Close();
 			MenuPanel.Open();
+			cs.LoginChat(PhotonNetwork.playerName);
 		}
 		else
 		{

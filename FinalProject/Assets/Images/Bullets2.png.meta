@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 293c2e38e983c4ebe9a12a53ac939e0e
+timeCreated: 1449158078
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bullets2_0
+    21300002: Bullets2_2
+    21300004: Bullets2_5
+    21300006: Bullets2_8
+    21300008: Bullets2_9
+    21300010: Bullets2_10
+    21300012: Bullets2_1
+    21300014: Bullets2_3
+    21300016: Bullets2_7
+    21300018: Bullets2_4
+    21300020: Bullets2_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 180
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bullets2_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 113
+        width: 57
+        height: 105
+      alignment: 9
+      pivot: {x: .506045222, y: .795352459}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 110
+        width: 24
+        height: 102
+      alignment: 9
+      pivot: {x: .456927627, y: .814173996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 116
+        width: 36
+        height: 100
+      alignment: 9
+      pivot: {x: .432336599, y: .234008029}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 71
+        height: 108
+      alignment: 9
+      pivot: {x: .505069196, y: .803261101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_9
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 79
+        height: 108
+      alignment: 9
+      pivot: {x: .5, y: .79659605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_10
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1
+        width: 77
+        height: 111
+      alignment: 9
+      pivot: {x: .472076416, y: .27161023}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 120
+        width: 102
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_3
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 8
+        width: 92
+        height: 101
+      alignment: 9
+      pivot: {x: .507824123, y: .795771062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_7
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 117
+        width: 26
+        height: 97
+      alignment: 9
+      pivot: {x: .499998838, y: .77353096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 114
+        width: 22
+        height: 102
+      alignment: 9
+      pivot: {x: .531324923, y: .79052645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bullets2_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 110
+        width: 26
+        height: 102
+      alignment: 9
+      pivot: {x: .446988046, y: .2027172}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
