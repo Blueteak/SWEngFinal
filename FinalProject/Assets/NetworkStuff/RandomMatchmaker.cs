@@ -92,12 +92,17 @@ public class RandomMatchmaker : Photon.PunBehaviour
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
         //base.OnPhotonPlayerConnected(newPlayer);
-        if (PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length == 5)
+        if (PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length == 3)
         {
             Debug.Log("Game Start ");
             Debug.Log("Num Players: " + PhotonNetwork.playerList.Length);
             //Show countdown in GUI
             //set players to spawn locations
+            GameObject.FindGameObjectWithTag("myShip").GetComponent<RocketHealth>().Respawn();
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("Ship"))
+            {
+                go.GetComponent<RocketHealth>().Respawn();
+            }
             //Reset scores
             FindObjectOfType<ScoreKeeper>().ResetScores();
             //Start Game Timer
