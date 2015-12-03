@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ChatDisplay : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class ChatDisplay : MonoBehaviour {
 	public void doMessage()
 	{
 		FindObjectOfType<ChatSystem>().SendMessage("lobby", ifield.text);
+		ifield.text = "";
+		FindObjectOfType<EventSystem>().SetSelectedGameObject(null);
 	}
 
 	void Start()
