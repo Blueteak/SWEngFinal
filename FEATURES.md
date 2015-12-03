@@ -27,12 +27,12 @@
 | Feature | Progress |
 | ------ | ----------- |
 | Attack Damage | DONE |
-| Collision Damage |
-| Arena Traps |
+| Collision Damage | DRP-T |
+| Arena Traps | DRP-T |
 | Player Death | DONE |
 | Respawn Timer | DONE |
 | Spawn Points | DONE |
-| Point System |
+| Point System | DONE |
 
 ###Powerups
 
@@ -45,8 +45,8 @@
 | Fast Blast |
 | Rocket Barrage |
 | Bullet Circle |
-| Damage Shield |
-| Speed Boost |
+| Damage Shield | DONE |
+| Speed Boost | DONE | 
 
 ###Menu UI
 
@@ -61,7 +61,7 @@
 | Feature | Progress |
 | ------ | ----------- |
 | Health Indicator | DONE |
-| Scores | JS |
+| Scores | DONE |
 | Current Gun Type |
 | Minimap | DONE |
 | Targeting Reticle | DONE |
@@ -71,15 +71,15 @@
 | Feature | Progress |
 | ------ | ----------- |
 | Synchronized Arena Spawning | DONE |
-| Multiple Arenas |
-| Moving Stage Objects |
+| Multiple Arenas | DRP-T |
+| Moving Stage Objects | DRP-T |
 
 ###Backend
 
 | Feature | Progress |
 | ------ | ----------- |
-| Parse Data Storage |
-| Parse Facebook Login |
+| Parse Data Storage | DRP-S |
+| Parse Facebook Login | DRP-S |
 | Photon Networking Mutliplayer | DONE |
 
 ###Network System
@@ -90,7 +90,7 @@
 | Friends List |
 | Invite friends to party |
 | Join game with party |
-| Facebook Login |
+| Facebook Login | DRP-S |
 | Player Ship Synchronization | DONE |
 | Network Player Shooting | DONE |
 | Synchronized Powerup Pickups | DONE |
