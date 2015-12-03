@@ -8,6 +8,8 @@ public class ScoreKeeper : MonoBehaviour {
 	public List<Score> GameScores;
 	public Text ScoreLabel;
 
+	//Sync scores to new player when they join
+
 	public void ChangeScore(int id, int change)
 	{
 		Debug.Log("Changed Score");

@@ -556,8 +556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 0
-  MainThrust: 260
-  SideThrust: 200
+  MainThrust: 375
+  SideThrust: 280
   Boost: 0
   MainRocket: {fileID: 19891620}
   LeftRocket: {fileID: 19894086}
@@ -582,6 +582,7 @@ MonoBehaviour:
   SpawnEffect: {fileID: 0}
   Highlights: {fileID: 21235314}
   invincible: 0
+  SpawnPoints: []
 --- !u!114 &11491998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4087,11 +4088,11 @@ Prefab:
       objectReference: {fileID: 21241366}
     - target: {fileID: 0}
       propertyPath: MainThrust
-      value: 260
+      value: 375
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SideThrust
-      value: 200
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TrailColor.r
