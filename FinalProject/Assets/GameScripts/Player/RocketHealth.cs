@@ -71,6 +71,7 @@ public class RocketHealth : MonoBehaviour {
 			else
 				FindObjectOfType<ScoreKeeper>().ChangeScore(playerID, -50);
 			rc.disableMovement();
+			GetComponent<RocketShoot>().canShoot = false;
 			StartCoroutine("ResAfterTime", 1.5f);
 			pView.RPC("Explode", PhotonTargets.All);
 
@@ -94,6 +95,7 @@ public class RocketHealth : MonoBehaviour {
 		rc.canMove = true;
 		curShield = 0;
 		pView.RPC("Reset", PhotonTargets.All);
+		GetComponent<RocketShoot>().canShoot = true;
 		currentHealth = MaxHealth;
 	}
 
