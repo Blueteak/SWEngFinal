@@ -42,9 +42,9 @@
 | Powerup Spawn Points | DONE |
 | Shotgun Spread | DONE |
 | Bouncing Bullets | DONE |
-| Fast Blast |
-| Rocket Barrage |
-| Bullet Circle |
+| Fast Blast | DONE |
+| Rocket Barrage | DRP-T |
+| Bullet Circle | DRP-T |
 | Damage Shield | DONE |
 | Speed Boost | DONE | 
 
@@ -52,9 +52,9 @@
 
 | Feature | Progress |
 | ------ | ----------- |
-| Main Menu |
+| Main Menu | DONE |
 | Friends List |
-| Network Connection Indicators |
+| Network Connection Indicators | DONE |
 
 ###Game UI
 
@@ -62,7 +62,7 @@
 | ------ | ----------- |
 | Health Indicator | DONE |
 | Scores | DONE |
-| Current Gun Type |
+| Current Gun Type | DRP-T |
 | Minimap | DONE |
 | Targeting Reticle | DONE |
 
@@ -86,7 +86,7 @@
 
 | Feature | Progress |
 | ------ | ----------- |
-| Matchmaking |
+| Matchmaking | DONE |
 | Friends List |
 | Invite friends to party |
 | Join game with party |
@@ -101,11 +101,12 @@
 | Feature | Progress |
 | ------ | ----------- |
 | Spaceship Sprite | DONE |
-| Bullet Sprites |
+| Bullet Sprites | DONE |
 | Powerup Sprites | DONE |
 | Powerup Effects | DONE |
-| Bullet Effects |
+| Bullet Effects | DONE |
 | Ship Explosion | DONE |
 | Ship Thrusters | DONE |
 | Space Effects | DONE |
 | Star Field | DONE |
+| Shield Effect |
