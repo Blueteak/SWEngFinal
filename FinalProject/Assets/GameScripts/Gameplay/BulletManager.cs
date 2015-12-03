@@ -90,8 +90,9 @@ public enum BulletType
 {
 	Default,
 	Spread,
-	SingleBounce,
-	Rocket
+	Blast,
+	Bomb,
+	SingleBounce
 }
 
 //Link bullet type with object for spawn

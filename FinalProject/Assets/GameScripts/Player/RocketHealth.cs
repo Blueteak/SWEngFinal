@@ -95,6 +95,7 @@ public class RocketHealth : MonoBehaviour {
 		rc.canMove = true;
 		curShield = 0;
 		pView.RPC("Reset", PhotonTargets.All);
+		GetComponent<RocketShoot>().BType = BulletType.Default;
 		GetComponent<RocketShoot>().canShoot = true;
 		currentHealth = MaxHealth;
 	}
