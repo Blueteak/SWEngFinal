@@ -21,6 +21,8 @@ public class RocketHealth : MonoBehaviour {
 	RocketControl rc;
 	bool hasPoints;
 
+	public GameObject ShieldView;
+
 	
 	void Start () {
 		pView = GetComponent<PhotonView>();
@@ -51,12 +53,13 @@ public class RocketHealth : MonoBehaviour {
 	{
 		Debug.Log("Dmg: " + dmg);
 		curShield -= dmg;
-		if(curShield < 0)
+		if(curShield <= 0)
 		{
 			if(playerID != PhotonNetwork.player.ID)
 				FindObjectOfType<ScoreKeeper>().ChangeScore(playerID, 20);
 			currentHealth += curShield;
 			curShield = 0;
+			ShieldView.SetActive(false);
 		}
 		else
 		{
@@ -80,7 +83,9 @@ public class RocketHealth : MonoBehaviour {
 
 	public void AddShield(int amount)
 	{
+		ShieldView.SetActive(true);
 		curShield = Mathf.Min(curShield+amount, MaxShield);
+
 	}
 
 	public void heal(int amount)

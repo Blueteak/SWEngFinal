@@ -34,6 +34,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &113910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 479512}
+  - 212: {fileID: 21216874}
+  - 95: {fileID: 9551946}
+  m_Layer: 0
+  m_Name: ShieldDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &122666
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +297,7 @@ Transform:
   - {fileID: 453934}
   - {fileID: 406320}
   - {fileID: 22497438}
+  - {fileID: 479512}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &474150
@@ -294,6 +312,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 468114}
   m_RootOrder: 5
+--- !u!4 &479512
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113910}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.300000012, z: 0}
+  m_LocalScale: {x: 1.25000024, y: 1.25, z: 1.25}
+  m_Children: []
+  m_Father: {fileID: 468114}
+  m_RootOrder: 9
 --- !u!4 &499342
 Transform:
   m_ObjectHideFlags: 1
@@ -344,6 +374,23 @@ PolygonCollider2D:
       - {x: -.453125656, y: -.429207385}
       - {x: -.573802471, y: -.243508577}
       - {x: -.181078658, y: .0673202276}
+--- !u!95 &9551946
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113910}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8686e15d447cd4fcca891af7fdd70d75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!96 &9648592
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -544,6 +591,7 @@ MonoBehaviour:
   givenInput: 0
   LR: 0
   MinimapMark: {fileID: 21241366}
+  ShieldView: {fileID: 113910}
 --- !u!114 &11470442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,6 +631,7 @@ MonoBehaviour:
   Highlights: {fileID: 21235314}
   invincible: 0
   SpawnPoints: []
+  ShieldView: {fileID: 113910}
 --- !u!114 &11491998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3875,6 +3924,32 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+--- !u!212 &21216874
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 113910}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300036, guid: 685040236da994dcab6b166ba60be19f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21235314
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -4121,6 +4196,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: -.300000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

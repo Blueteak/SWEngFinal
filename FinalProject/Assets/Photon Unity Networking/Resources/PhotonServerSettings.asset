@@ -37,4 +37,5 @@ MonoBehaviour:
   - PickupObj
   - Adjust
   - resetAll
+  - ResetOnAllClients
   DisableAutoOpenWizard: 1
