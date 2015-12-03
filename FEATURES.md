@@ -53,7 +53,7 @@
 | Feature | Progress |
 | ------ | ----------- |
 | Main Menu | DONE |
-| Friends List |
+| Friends List | DRP -S |
 | Network Connection Indicators | DONE |
 
 ###Game UI
@@ -87,7 +87,7 @@
 | Feature | Progress |
 | ------ | ----------- |
 | Matchmaking | DONE |
-| Friends List |
+| Friends List | DRP -S |
 | Invite friends to party |
 | Join game with party |
 | Facebook Login | DRP-S |
