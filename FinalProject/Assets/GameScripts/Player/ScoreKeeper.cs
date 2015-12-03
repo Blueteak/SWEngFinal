@@ -8,6 +8,21 @@ public class ScoreKeeper : MonoBehaviour {
 	public List<Score> GameScores;
 	public Text ScoreLabel;
 
+    public float gameTimeInSeconds = 180;
+    private float timeRemaining = 0;
+    private bool gameStarted = false;
+
+    public void StartGame()
+    {
+        GetComponent<PhotonView>().RPC("ResetOnAllClients", PhotonTargets.All);
+    }
+    [PunRPC]
+    void ResetOnAllClients()
+    {
+        timeRemaining = gameTimeInSeconds;
+        gameStarted = true;
+        Debug.Log("Game Start");
+    }
 	//Sync scores to new player when they join
 
 	public void ChangeScore(int id, int change)
@@ -19,6 +34,16 @@ public class ScoreKeeper : MonoBehaviour {
 
 	void Update()
 	{
+        if(gameStarted)
+        {
+            timeRemaining -= Time.deltaTime;
+            //display ui
+            if(timeRemaining <= 0)
+            {
+                //do end of game stuff
+                
+            }
+        }
 		if(GameScores.Count > 0 && PhotonNetwork.inRoom)
 		{
 			string s = "";

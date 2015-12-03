@@ -96,7 +96,8 @@ public class RandomMatchmaker : Photon.PunBehaviour
         {
             Debug.Log("Game Start ");
             Debug.Log("Num Players: " + PhotonNetwork.playerList.Length);
-            //Show countdown in GUI
+            //Show countdown in GUI//display game start
+            //GetComponent<PhotonView>().RPC("")
             //set players to spawn locations
             GameObject.FindGameObjectWithTag("myShip").GetComponent<RocketHealth>().Respawn();
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("Ship"))
@@ -106,6 +107,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
             //Reset scores
             FindObjectOfType<ScoreKeeper>().ResetScores();
             //Start Game Timer
+            FindObjectOfType<ScoreKeeper>().StartGame();
         }
     }
 }
