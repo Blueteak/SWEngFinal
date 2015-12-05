@@ -16,6 +16,8 @@ public class ChatDisplay : MonoBehaviour {
 
 	public InputField ifield;
 
+	public GameObject Context;
+
 	public void doMessage()
 	{
 		FindObjectOfType<ChatSystem>().SendMessage("lobby", ifield.text);
@@ -36,6 +38,12 @@ public class ChatDisplay : MonoBehaviour {
 		m.body = body;
 		ChatMsgs.Add(m);
 		Redraw();
+	}
+
+	public void OpenContext(RectTransform t)
+	{
+		Context.SetActive(true);
+		Context.GetComponent<RectTransform>().position = t.position;
 	}
 
 	void Redraw()
