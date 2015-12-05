@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20
   Speed: 8
   HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20
   Speed: 8
   HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20
   Speed: 8
   HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20
   Speed: 8
   HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 20
   Speed: 8
   HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
@@ -639,7 +639,7 @@ Prefab:
       objectReference: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Force

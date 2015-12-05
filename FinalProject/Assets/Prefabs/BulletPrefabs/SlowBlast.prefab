@@ -106,7 +106,7 @@ MonoBehaviour:
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
   BounceNum: 0
   isDeadly: 0
-  MaxLifetime: 1
+  MaxLifetime: 3
   Children: []
   affectGrid: 1
   forceColor: {r: .625, g: .643103361, b: 1, a: .490999997}
@@ -160,6 +160,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Speed
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: MaxLifetime
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

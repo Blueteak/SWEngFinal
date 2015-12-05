@@ -43,7 +43,7 @@ Transform:
   m_GameObject: {fileID: 158074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 482690}
   m_RootOrder: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33d0f160ecd284544a55bc473438da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 60
   Speed: 8
   HitParticle: {fileID: 157836, guid: 932faf7a760cd42b3978748a68f279d8, type: 2}
   FadeParticle: {fileID: 179512, guid: 0b1bd070a9e814f3880950ec4ed9b7de, type: 2}
@@ -167,7 +167,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: damage
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: affectGrid
@@ -200,6 +200,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: forceColor.a
       value: .497000009
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
