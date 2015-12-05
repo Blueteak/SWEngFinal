@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickedUp: 0
   RespawnTime: 8
-  PTypes: 0000000001000000020000000300000004000000
+  PTypes: 04000000010000000200000003000000
 --- !u!114 &11489742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickedUp: 0
   RespawnTime: 8
-  PTypes: 0000000001000000020000000300000004000000
+  PTypes: 04000000010000000200000003000000
 --- !u!124 &12412482
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1769,7 +1769,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: PTypes.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GridHeight
@@ -1830,6 +1830,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: PTypes.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: PTypes.Array.data[0]
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []

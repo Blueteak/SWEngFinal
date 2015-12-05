@@ -526,6 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GunPosition: {fileID: 425036}
   BulletCD: .349999994
+  baseCD: 0
   BType: 0
   canShoot: 0
 --- !u!114 &11427572
@@ -623,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
-  MaxShield: 200
+  MaxShield: 50
   curShield: 0
   currentHealth: 0
   ExplEffect: {fileID: 100000, guid: 4c5a17ca1f9fec84e941441ebb8be079, type: 2}
@@ -4119,7 +4120,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MaxShield
-      value: 200
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SpawnEffect

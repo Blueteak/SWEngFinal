@@ -6,7 +6,7 @@ public class RocketShoot : MonoBehaviour {
 	public Transform GunPosition;
 	BulletManager bmr;
 	public float BulletCD = 0.35f;
-	float baseCD;
+	public float baseCD;
 	float cdTime;
 	public BulletType BType = BulletType.Default;
 	float timer;
