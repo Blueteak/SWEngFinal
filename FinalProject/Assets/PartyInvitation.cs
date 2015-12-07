@@ -23,11 +23,11 @@ public class PartyInvitation : MonoBehaviour {
 	{
 		if(!currentAsk && !FindObjectOfType<PartyMatchmaker>().inParty())
 		{
-			DispText.text = ChatSystem.playerToText(user) + " invited you to a party.";
+			AskedUser = user;
+			DispText.text = ChatSystem.playerToText(AskedUser) + " invited you to a party.";
 			currentAsk = true;
 			panel.SetStateToClose();
 			panel.Open();
-			AskedUser = user;
 		}
 	}
 
