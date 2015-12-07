@@ -97,7 +97,11 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 		if(sender != PhotonNetwork.player.name)
 		{
 			string msg = ((string)message);
-			if(msg.Equals("/invite"))
+			if(checkBlocked(sender))
+			{
+				Whisper(sender, "PLAYER_BLOCKED");
+			}
+			else if(msg.Equals("/invite"))
 			{
 				FindObjectOfType<PartyInvitation>().Open(sender);
 			}
@@ -110,6 +114,10 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 				FindObjectOfType<PartyMatchmaker>().SetLeader(PhotonNetwork.playerName);
 				FindObjectOfType<PartyMatchmaker>().AddPlayerToParty(sender);
 				SendSystemMessage(playerToText(sender) + " joined your party.");
+			}
+			else if(msg.Equals("PLAYER_BLOCKED"))
+			{
+				SendSystemMessage(playerToText(sender) + " has blocked communication with you.");
 			}
 			else if(msg.Equals("REMOVED_FROM_PARTY"))
 			{
