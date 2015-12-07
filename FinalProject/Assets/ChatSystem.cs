@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ExitGames.Client.Photon.Chat;
-using UnityEditor;
 using System.Diagnostics;
 using ExitGames.Client.Photon;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 public class ChatSystem : MonoBehaviour, IChatClientListener
 {
+	public List<string> BlockedPlayers;
 
 	public static string appID = "8b07b1f6-0303-490c-a8e2-b6157b7bfa81";
 	public ChatDisplay LobbyChatDisplay;
@@ -17,6 +19,26 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 	{
 		Application.runInBackground = true;
 	}
+
+	public void ToggleBlock(string user)
+	{
+		if(!BlockedPlayers.Contains(user))
+		{
+			BlockedPlayers.Add(user);
+			SendSystemMessage(playerToText(user) + " has been blocked.");
+		}
+		else
+		{
+			BlockedPlayers.Remove(user);
+			SendSystemMessage(playerToText(user) + " has been un-blocked.");
+		}
+	}
+
+	public bool checkBlocked(string user)
+	{
+		return BlockedPlayers.Contains(user);
+	}
+	
 
 	public void LoginChat (string username) 
 	{
@@ -39,15 +61,31 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 			chatClient.Service();
 	}
 
+	public void SendSystemMessage(string msg)
+	{
+		LobbyChatDisplay.AddMessage("System", msg, PlrMessageType.System);
+	}
+
+	public static string playerToText(string user)
+	{
+		return user.Split(':')[0];
+	}
+
+	public void Whisper(string user, string message)
+	{
+		UnityEngine.Debug.Log("Sending Whisper to " + user + ": " + message);
+		chatClient.SendPrivateMessage(user, message);
+	}
+
 	public void OnGetMessages( string channelName, string[] senders, object[] messages )
 	{
 		string msgs = "";
 		for ( int i = 0; i < senders.Length; i++ )
 		{
 			msgs += senders[i] + "=" + messages[i] + ", ";
-			if(channelName.Equals("lobby"))
+			if(channelName.Equals("lobby") && !checkBlocked(senders[i]))
 			{
-				LobbyChatDisplay.AddMessage(senders[i], (string)messages[i]);
+				LobbyChatDisplay.AddMessage(senders[i], (string)messages[i], PlrMessageType.Default);
 			}
 		}
 		UnityEngine.Debug.Log( "OnGetMessages: " + channelName + "(" + senders.Length + ") > " + msgs );
@@ -56,10 +94,10 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 
 	public void OnPrivateMessage( string sender, object message, string channelName )
 	{
-		ChatChannel ch = chatClient.PrivateChannels[ channelName ];
-		foreach ( object msg in ch.Messages )
+		if(sender != PhotonNetwork.player.name)
 		{
-			UnityEngine.Debug.Log( msg );
+			UnityEngine.Debug.Log("Got Whisper from " + playerToText(sender) + ": " + (string)message);
+			LobbyChatDisplay.AddMessage(sender, (string)message, PlrMessageType.Whisper);
 		}
 	}
 

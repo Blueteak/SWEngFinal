@@ -8,6 +8,6 @@ public class NameButton : MonoBehaviour {
 	// Use this for initialization
 	public void click() 
 	{
-		GetComponentInParent<ChatDisplay>().OpenContext(panelPosition);
+		GetComponentInParent<ChatMessageObj>().OpenContext(panelPosition);
 	}
 }
