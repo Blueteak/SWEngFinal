@@ -42,7 +42,7 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 
 	public void LoginChat (string username) 
 	{
-		UnityEngine.Debug.Log("Log In");
+		FindObjectOfType<PartyMatchmaker>().ClearParty();
 		chatClient = new ChatClient( this , ExitGames.Client.Photon.ConnectionProtocol.Udp);
 		ExitGames.Client.Photon.Chat.AuthenticationValues auth = new ExitGames.Client.Photon.Chat.AuthenticationValues();
 		auth.UserId = username;
@@ -96,8 +96,36 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 	{
 		if(sender != PhotonNetwork.player.name)
 		{
-			UnityEngine.Debug.Log("Got Whisper from " + playerToText(sender) + ": " + (string)message);
-			LobbyChatDisplay.AddMessage(sender, (string)message, PlrMessageType.Whisper);
+			string msg = ((string)message);
+			if(msg.Equals("/invite"))
+			{
+				FindObjectOfType<PartyInvitation>().Open(sender);
+			}
+			else if(msg.Equals("GAME_STARTED"))
+			{
+				PhotonNetwork.JoinRoom(sender);
+			}
+			else if(msg.Equals("ACCEPT_INVITE"))
+			{
+				FindObjectOfType<PartyMatchmaker>().SetLeader(PhotonNetwork.playerName);
+				FindObjectOfType<PartyMatchmaker>().AddPlayerToParty(sender);
+				SendSystemMessage(playerToText(sender) + " joined your party.");
+			}
+			else if(msg.Equals("REMOVED_FROM_PARTY"))
+			{
+				FindObjectOfType<PartyMatchmaker>().ClearParty();
+				SendSystemMessage("You have been removed from the party.");
+			}
+			else if(msg.Equals("DECLINE_INVITE"))
+			{
+				SendSystemMessage(sender + " declined your invitation.");
+			}
+			else
+			{
+				UnityEngine.Debug.Log("Got Whisper from " + playerToText(sender) + ": " + (string)message);
+				LobbyChatDisplay.AddMessage(sender, (string)message, PlrMessageType.Whisper);
+			}
+
 		}
 	}
 

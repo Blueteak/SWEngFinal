@@ -108,6 +108,7 @@ public class ChatDisplay : MonoBehaviour {
 	{
 		WhisperTarget = user;
 		cs.Whisper(WhisperTarget, "/invite");
+		cs.SendSystemMessage("Invited " + ChatSystem.playerToText(user) + " to join your party.");
 	}
 
 	public void BlockPlayer(string user)
