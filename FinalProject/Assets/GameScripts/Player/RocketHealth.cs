@@ -34,6 +34,7 @@ public class RocketHealth : MonoBehaviour {
 
 	void Update()
 	{
+		ShieldView.GetComponent<SpriteRenderer>().color = new Color(255,255,255, (float)curShield/(float)MaxShield);
 		if(!hasPoints)
 		{
 			GameObject[] Spoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
@@ -59,7 +60,6 @@ public class RocketHealth : MonoBehaviour {
 				FindObjectOfType<ScoreKeeper>().ChangeScore(playerID, 20);
 			currentHealth += curShield;
 			curShield = 0;
-			ShieldView.SetActive(false);
 		}
 		else
 		{
@@ -83,7 +83,6 @@ public class RocketHealth : MonoBehaviour {
 
 	public void AddShield(int amount)
 	{
-		ShieldView.SetActive(true);
 		curShield = Mathf.Min(curShield+amount, MaxShield);
 
 	}

@@ -483,7 +483,7 @@ PlayerSettings:
   WebGL::template: APPLICATION:Minimal
   additionalIl2CppArgs::additionalIl2CppArgs: 
   firstStreamedSceneWithResources: 0
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: 9164bf33-5151-43ed-a16a-99fe15563e29
+  projectName: FinalProject
+  organizationId: technospirits
   cloudEnabled: 0

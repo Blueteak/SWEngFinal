@@ -34,13 +34,17 @@ public class ChatDisplay : MonoBehaviour {
 
 	public ScrollRect scroll;
 
+	public EMOpenCloseMotion HolderPanel;
+
 
 
 	public void doMessage()
 	{
 		if(Input.GetButtonDown("Submit") && ifield.text.Length > 0){
-			if(CurrentType == PlrMessageType.Default)
+			if(CurrentType == PlrMessageType.Default && !PhotonNetwork.inRoom)
 				cs.SendMessage("lobby", ifield.text);
+			else if(CurrentType == PlrMessageType.Default && PhotonNetwork.inRoom)
+				cs.SendMessage(PhotonNetwork.room.name, ifield.text);
 			else if(CurrentType == PlrMessageType.Whisper)
 			{
 				cs.Whisper(WhisperTarget, ifield.text);
@@ -62,32 +66,35 @@ public class ChatDisplay : MonoBehaviour {
 
 	void Update()
 	{
-		if(inFocus)
+		if(HolderPanel != null && HolderPanel.motionState == EMBaseMotion.MotionState.Open)
 		{
-			if(Input.GetKeyDown(KeyCode.Return))
-				esyst.SetSelectedGameObject(ifield.gameObject);
-			else if(Input.GetKeyDown(KeyCode.Escape) && inFocus)
+			if(inFocus)
 			{
-				Debug.Log("Chat Left Focus");
-				ChangeType(PlrMessageType.Default);
-				inFocus = false;
-				esyst.SetSelectedGameObject(null);
-				foreach(var b in Displays)
-					b.color = OutFocus;
+				if(Input.GetKeyDown(KeyCode.Return))
+					esyst.SetSelectedGameObject(ifield.gameObject);
+				else if(Input.GetKeyDown(KeyCode.Escape) && inFocus)
+				{
+					Debug.Log("Chat Left Focus");
+					ChangeType(PlrMessageType.Default);
+					inFocus = false;
+					esyst.SetSelectedGameObject(null);
+					foreach(var b in Displays)
+						b.color = OutFocus;
+				}
 			}
-		}
-		else
-		{
-
-			if(Input.GetKeyDown(KeyCode.Return) || esyst.currentSelectedGameObject == ifield.gameObject && !inFocus)
+			else
 			{
-				Debug.Log("Chat Entered Focus");
-				inFocus = true;
-				esyst.SetSelectedGameObject(ifield.gameObject);
-				foreach(var b in Displays)
-					b.color = InFocus;
+				
+				if(Input.GetKeyDown(KeyCode.Return) || esyst.currentSelectedGameObject == ifield.gameObject && !inFocus)
+				{
+					Debug.Log("Chat Entered Focus");
+					inFocus = true;
+					esyst.SetSelectedGameObject(ifield.gameObject);
+					foreach(var b in Displays)
+						b.color = InFocus;
+				}
+				
 			}
-
 		}
 	}
 

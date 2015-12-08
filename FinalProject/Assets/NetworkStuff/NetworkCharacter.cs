@@ -9,7 +9,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
 	public float LR = 0;
 	RocketControl rcontrol;
 	Rigidbody2D rb;
-	bool shieldOn;
+	float shieldOn;
 
 	public SpriteRenderer MinimapMark;
 	public GameObject ShieldView;
@@ -41,10 +41,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
 			rb.velocity = curVel;
 
-			if(shieldOn)
-				ShieldView.SetActive(true);
-			else
-				ShieldView.SetActive(false);
+			ShieldView.GetComponent<SpriteRenderer>().color = new Color(255,255,255, shieldOn);
 
 			//Rocket Particle System Sync
 
@@ -79,7 +76,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			stream.SendNext(givenInput);
 			stream.SendNext(LR);
 			stream.SendNext(rb.velocity);
-			stream.SendNext(rhealth.curShield > 0);
+			stream.SendNext((float)rhealth.curShield/(float)rhealth.MaxShield);
         }
         else
         {
@@ -89,7 +86,7 @@ public class NetworkCharacter : Photon.MonoBehaviour
 			this.givenInput = (bool)stream.ReceiveNext();
 			this.LR = (float)stream.ReceiveNext();
 			curVel = (Vector2)stream.ReceiveNext();
-			shieldOn = (bool)stream.ReceiveNext();
+			shieldOn = (float)stream.ReceiveNext();
         }
     }
 }

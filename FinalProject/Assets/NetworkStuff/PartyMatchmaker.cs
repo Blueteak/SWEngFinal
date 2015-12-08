@@ -56,8 +56,8 @@ public class PartyMatchmaker : MonoBehaviour {
     {
 		if(PhotonNetwork.player.name == PartyLeader)
 		{
-
-			PhotonNetwork.CreateRoom(PhotonNetwork.playerName, new RoomOptions() { maxPlayers = 5 }, null);
+			PhotonNetwork.CreateRoom(PhotonNetwork.player.name, new RoomOptions() { maxPlayers = 5 }, null);
+			FindObjectOfType<ChatSystem>().chatClient.Subscribe(new string[] {PhotonNetwork.player.name});
 			foreach(string s in partyList)
 			{
 				if(s != PhotonNetwork.player.name)

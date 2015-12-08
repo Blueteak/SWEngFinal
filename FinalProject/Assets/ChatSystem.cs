@@ -12,7 +12,9 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 
 	public static string appID = "8b07b1f6-0303-490c-a8e2-b6157b7bfa81";
 	public ChatDisplay LobbyChatDisplay;
+	public ChatDisplay InGameDisplay;
 	public ChatClient chatClient;
+
 	// Use this for initialization
 
 	void Start()
@@ -63,7 +65,10 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 
 	public void SendSystemMessage(string msg)
 	{
-		LobbyChatDisplay.AddMessage("System", msg, PlrMessageType.System);
+		if(!PhotonNetwork.inRoom)
+			LobbyChatDisplay.AddMessage("System", msg, PlrMessageType.System);
+		else
+			InGameDisplay.AddMessage("System", msg, PlrMessageType.System);
 	}
 
 	public static string playerToText(string user)
@@ -83,9 +88,13 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 		for ( int i = 0; i < senders.Length; i++ )
 		{
 			msgs += senders[i] + "=" + messages[i] + ", ";
-			if(channelName.Equals("lobby") && !checkBlocked(senders[i]))
+			if(channelName.Equals("lobby") && !checkBlocked(senders[i]) && !PhotonNetwork.inRoom)
 			{
 				LobbyChatDisplay.AddMessage(senders[i], (string)messages[i], PlrMessageType.Default);
+			}
+			else if(PhotonNetwork.inRoom && !channelName.Equals("lobby"))
+			{
+				InGameDisplay.AddMessage(senders[i], (string)messages[i], PlrMessageType.Default);
 			}
 		}
 		UnityEngine.Debug.Log( "OnGetMessages: " + channelName + "(" + senders.Length + ") > " + msgs );
@@ -107,7 +116,10 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 			}
 			else if(msg.Equals("GAME_STARTED"))
 			{
-				PhotonNetwork.JoinRoom(sender);
+				UnityEngine.Debug.Log("Joining Room: " + sender);
+				FindObjectOfType<Note>().Notify("Get Ready", "Your party is starting a game!", 2f);
+				StartCoroutine("JoinPartyGame", sender);
+
 			}
 			else if(msg.Equals("ACCEPT_INVITE"))
 			{
@@ -131,9 +143,31 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 			else
 			{
 				UnityEngine.Debug.Log("Got Whisper from " + playerToText(sender) + ": " + (string)message);
-				LobbyChatDisplay.AddMessage(sender, (string)message, PlrMessageType.Whisper);
+				if(!PhotonNetwork.inRoom)
+					LobbyChatDisplay.AddMessage(sender, (string)message, PlrMessageType.Whisper);
+				else
+					InGameDisplay.AddMessage(sender, (string)message, PlrMessageType.Whisper);
 			}
 
+		}
+	}
+
+	IEnumerator JoinPartyGame(string roomname)
+	{
+		RoomInfo[] rooms = PhotonNetwork.GetRoomList();
+		bool found = false;
+		while(!found)
+		{
+			foreach(var r in rooms)
+			{
+				if(r.name == roomname)
+				{
+					found = true;
+					PhotonNetwork.JoinRoom(roomname);
+				}
+			}
+			rooms = PhotonNetwork.GetRoomList();
+			yield return true;
 		}
 	}
 
