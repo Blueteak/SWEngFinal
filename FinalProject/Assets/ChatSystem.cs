@@ -117,6 +117,8 @@ public class ChatSystem : MonoBehaviour, IChatClientListener
 			else if(msg.Equals("GAME_STARTED"))
 			{
 				UnityEngine.Debug.Log("Joining Room: " + sender);
+				if(PhotonNetwork.inRoom)
+					PhotonNetwork.LeaveRoom();
 				FindObjectOfType<Note>().Notify("Get Ready", "Your party is starting a game!", 2f);
 				StartCoroutine("JoinPartyGame", sender);
 

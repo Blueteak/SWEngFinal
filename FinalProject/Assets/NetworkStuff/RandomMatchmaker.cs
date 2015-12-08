@@ -53,7 +53,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
     void OnPhotonRandomJoinFailed()
     {
 		FindObjectOfType<Note>().Notify("No open games","Creating new room.", 1.5f);
-        PhotonNetwork.CreateRoom("GameRoom:"+Random.Range(0,100000000), new RoomOptions(){maxPlayers = 5}, null);
+        PhotonNetwork.CreateRoom("GameRoom:"+Random.Range(0,100000000), new RoomOptions(){maxPlayers = 4}, null);
     }
     
     public override void OnJoinedRoom()
@@ -93,7 +93,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
     public override void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
     {
         //base.OnPhotonPlayerConnected(newPlayer);
-        if (PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length == 3)
+        if (PhotonNetwork.isMasterClient && PhotonNetwork.playerList.Length == 4)
         {
             Debug.Log("Game Start ");
             Debug.Log("Num Players: " + PhotonNetwork.playerList.Length);

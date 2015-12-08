@@ -37,16 +37,21 @@ public class RocketHealth : MonoBehaviour {
 		ShieldView.GetComponent<SpriteRenderer>().color = new Color(255,255,255, (float)curShield/(float)MaxShield);
 		if(!hasPoints)
 		{
-			GameObject[] Spoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
-			if(Spoints.Length > 0)
+			GetSpawnPoints();
+		}
+	}
+
+	void GetSpawnPoints()
+	{
+		GameObject[] Spoints = GameObject.FindGameObjectsWithTag("SpawnPoint");
+		if(Spoints.Length > 0)
+		{
+			SpawnPoints = new Transform[Spoints.Length];
+			for(int i=0; i<Spoints.Length; i++)
 			{
-				SpawnPoints = new Transform[Spoints.Length];
-				for(int i=0; i<Spoints.Length; i++)
-				{
-					SpawnPoints[i] = Spoints[i].transform;
-				}
-				hasPoints = true;
+				SpawnPoints[i] = Spoints[i].transform;
 			}
+			hasPoints = true;
 		}
 	}
 
@@ -92,6 +97,8 @@ public class RocketHealth : MonoBehaviour {
 		currentHealth = Mathf.Min(currentHealth+amount, MaxHealth);
 	}
 
+
+
 	public void Respawn()
 	{
 		//Reset position to a new spawn point
@@ -102,6 +109,7 @@ public class RocketHealth : MonoBehaviour {
 		GetComponent<RocketShoot>().BType = BulletType.Default;
 		GetComponent<RocketShoot>().canShoot = true;
 		currentHealth = MaxHealth;
+		curShield = 0;
 	}
 
 	IEnumerator DisableInvince(float seconds)
@@ -137,6 +145,12 @@ public class RocketHealth : MonoBehaviour {
 			int curIndex = 0;
 			for(int i=0; i<SpawnPoints.Length; i++)
 			{
+				if(SpawnPoints[i] == null)
+				{
+					GetSpawnPoints();
+					RandomSpawnPoint();
+					return;
+				}
 				float d = Vector2.Distance(SpawnPoints[i].position, transform.position);
 				if(d > maxDist)
 				{
@@ -145,6 +159,19 @@ public class RocketHealth : MonoBehaviour {
 				}
 			}
 			transform.position = SpawnPoints[curIndex].position;
+		}
+		else
+		{
+			transform.position = Vector3.zero;
+		}
+	}
+
+	public void RandomSpawnPoint()
+	{
+		GetSpawnPoints();
+		if(SpawnPoints.Length > 0)
+		{
+			transform.position = SpawnPoints[Random.Range(0,SpawnPoints.Length)].position;
 		}
 		else
 		{

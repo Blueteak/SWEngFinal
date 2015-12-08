@@ -38,4 +38,6 @@ MonoBehaviour:
   - Adjust
   - resetAll
   - ResetOnAllClients
+  - EndGame
+  - NewGame
   DisableAutoOpenWizard: 1

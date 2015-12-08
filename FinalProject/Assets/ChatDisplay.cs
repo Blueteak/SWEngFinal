@@ -36,6 +36,8 @@ public class ChatDisplay : MonoBehaviour {
 
 	public EMOpenCloseMotion HolderPanel;
 
+	public Image MessageHolder;
+
 
 
 	public void doMessage()
@@ -113,9 +115,17 @@ public class ChatDisplay : MonoBehaviour {
 
 	public void InvitePlayer(string user)
 	{
-		WhisperTarget = user;
-		cs.Whisper(WhisperTarget, "/invite");
-		cs.SendSystemMessage("Invited " + ChatSystem.playerToText(user) + " to join your party.");
+		if(FindObjectOfType<PartyMatchmaker>().partyList.Count < 4)
+		{
+			WhisperTarget = user;
+			cs.Whisper(WhisperTarget, "/invite");
+			cs.SendSystemMessage("Invited " + ChatSystem.playerToText(user) + " to join your party.");
+		}
+		else
+		{
+			cs.SendSystemMessage("Parties are limited to 4 players");
+		}
+
 	}
 
 	public void BlockPlayer(string user)
@@ -164,7 +174,7 @@ public class ChatDisplay : MonoBehaviour {
 			GameObject newM = (GameObject)Instantiate(MsgPrefab);
 			newM.transform.SetParent(MsgHolder);
 			newM.transform.localScale = Vector3.one;
-			newM.GetComponent<ChatMessageObj>().Init(m);
+			newM.GetComponent<ChatMessageObj>().Init(m, MessageHolder);
 			MessageObjects.Add(newM);
 		}
 		Invoke("ScrollToBottom", 0.1f);

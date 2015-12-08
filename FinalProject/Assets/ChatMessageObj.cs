@@ -8,10 +8,13 @@ public class ChatMessageObj : MonoBehaviour {
 
 	public Message m;
 
+	public Image Holder;
+
 	// Use this for initialization
-	public void Init (Message message)
+	public void Init (Message message, Image holder)
 	{
 		m = message;
+		Holder = holder;
 		string nt = "["+ChatSystem.playerToText(m.user)+"]: ";
 		if(m.mType == PlrMessageType.System)
 		{
@@ -33,6 +36,13 @@ public class ChatMessageObj : MonoBehaviour {
 			BodyText.color = Color.blue;
 		}
 
+	}
+
+	void Update()
+	{
+		Color c = BodyText.color;
+		c.a = Holder.color.a*3;
+		BodyText.color = c;
 	}
 
 	public void OpenContext(RectTransform t)

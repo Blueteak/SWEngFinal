@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 public class PartyMatchmaker : MonoBehaviour {
 
-    private List<string> partyList = new List<string>();
+    public List<string> partyList = new List<string>();
 	private string PartyLeader;
 
 	public GameObject RandomButton;
@@ -56,7 +56,7 @@ public class PartyMatchmaker : MonoBehaviour {
     {
 		if(PhotonNetwork.player.name == PartyLeader)
 		{
-			PhotonNetwork.CreateRoom(PhotonNetwork.player.name, new RoomOptions() { maxPlayers = 5 }, null);
+			PhotonNetwork.CreateRoom(PhotonNetwork.player.name, new RoomOptions() { maxPlayers = 4 }, null);
 			FindObjectOfType<ChatSystem>().chatClient.Subscribe(new string[] {PhotonNetwork.player.name});
 			foreach(string s in partyList)
 			{
