@@ -9,7 +9,7 @@
 ## Overview:
 This project is a multiplayer 2D Arcade-Shooter. Players take control of small spaceships and battle to the death in an enclosed arena.
 
-##User Stories
+## User Stories
 
 * As a user, I want a fun multiplayer game (easy to learn, hard to master)
 * As a user, I want chat while in game
