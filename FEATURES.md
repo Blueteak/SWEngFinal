@@ -1,6 +1,6 @@
-#Game Features
+# Game Features
 
-######Progress Key
+###### Progress Key
 | Display | Meaning |
 | ------ | ----------- |
 | DONE  | Feature Completed|
@@ -14,7 +14,7 @@
 | DRP-T | Feature Dropped due to Time Constraints |
 |       | Feature not yet started |
 
-###Player Control
+### Player Control
 
 | Feature | Progress |
 | ------ | ----------- |
@@ -23,7 +23,7 @@
 | Side Thrusters | DONE |
 | Variable Speed Capable | DONE |
 
-###Combat
+### Combat
 | Feature | Progress |
 | ------ | ----------- |
 | Attack Damage | DONE |
@@ -34,7 +34,7 @@
 | Spawn Points | DONE |
 | Point System | DONE |
 
-###Powerups
+### Powerups
 
 | Feature | Progress |
 | ------ | ----------- |
@@ -48,7 +48,7 @@
 | Damage Shield | DONE |
 | Speed Boost | DONE | 
 
-###Menu UI
+### Menu UI
 
 | Feature | Progress |
 | ------ | ----------- |
@@ -56,7 +56,7 @@
 | Friends List | DRP -S |
 | Network Connection Indicators | DONE |
 
-###Game UI
+### Game UI
 
 | Feature | Progress |
 | ------ | ----------- |
@@ -66,7 +66,7 @@
 | Minimap | DONE |
 | Targeting Reticle | DONE |
 
-###Arenas
+### Arenas
 
 | Feature | Progress |
 | ------ | ----------- |
@@ -74,7 +74,7 @@
 | Multiple Arenas | DRP-T |
 | Moving Stage Objects | DRP-T |
 
-###Backend
+### Backend
 
 | Feature | Progress |
 | ------ | ----------- |
@@ -82,7 +82,7 @@
 | Parse Facebook Login | DRP-S |
 | Photon Networking Mutliplayer | DONE |
 
-###Network System
+### Network System
 
 | Feature | Progress |
 | ------ | ----------- |
@@ -96,7 +96,7 @@
 | Synchronized Powerup Pickups | DONE |
 | Syncronized Powerup Usage | DONE |
 
-###Graphics
+### Graphics
 
 | Feature | Progress |
 | ------ | ----------- |
